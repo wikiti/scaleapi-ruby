@@ -17,9 +17,9 @@ Juwelier::Tasks.new do |gem|
   gem.name = "scaleapi-ruby"
   gem.homepage = "http://github.com/wikiti/scaleapi-ruby"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "wikiti.doghound@gmail.com"
+  gem.summary = %Q{A ruby gem wrapper for the Scale API}
+  gem.description = %Q{A ruby gem wrapper for the Scale API, containing all the endpoints available.}
+  gem.email = "info@danielherzog.es"
   gem.authors = ["Daniel Herzog"]
 
   # dependencies defined in Gemfile

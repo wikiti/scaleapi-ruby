@@ -1,11 +1,39 @@
 require 'uri'
-require 'date'
+require 'time'
+require 'rest-client'
+require 'json'
 
 require 'scale/api'
 require 'scale/generic_error'
+require 'scale/http_error'
+
+require 'scale/resources/base'
+require 'scale/resources/task'
+
+require 'scale/endpoints/endpoint'
+
+require 'scale/endpoints/tasks/task_endpoint'
+require 'scale/endpoints/tasks/create_annotation_task'
+require 'scale/endpoints/tasks/create_categorization_task'
+require 'scale/endpoints/tasks/create_transcription_task'
+require 'scale/endpoints/tasks/create_comparison_task'
+require 'scale/endpoints/tasks/create_phonecall_task'
+require 'scale/endpoints/tasks/retrieve_task'
+require 'scale/endpoints/tasks/cancel_task'
+require 'scale/endpoints/tasks/list_tasks'
+
+require 'scale/callbacks/callback'
+require 'scale/callbacks/task_callback'
+
+require 'pry'
+require 'pry-nav'
 
 module Scale
   def self.setup(params = {})
     Scale::API.new params
+  end
+
+  def self.build_callback(json)
+    Scale::Callbacks::Callback.build(json)
   end
 end

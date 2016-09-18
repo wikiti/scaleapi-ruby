@@ -1,4 +1,4 @@
-module Scala
+module Scale
   module Endpoints
     class Endpoint
       attr_reader :api, :params
@@ -13,15 +13,21 @@ module Scala
       end
 
       def self.shortcut
-        raise NotImplementedError
+        ''
       end
 
       def self.match?(method)
-        shortcut == method
+        shortcut.to_s == method.to_s
       end
 
       def self.descendants
         ObjectSpace.each_object(::Class).select {|klass| klass < self }
+      end
+
+      protected
+
+      def fetch_param(name)
+        params[name.to_s] || params[name.to_sym]
       end
     end
   end
