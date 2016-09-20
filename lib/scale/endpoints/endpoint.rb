@@ -1,11 +1,12 @@
 module Scale
   module Endpoints
     class Endpoint
-      attr_reader :api, :params
+      attr_reader :api, :args, :params
 
-      def initialize(api, params = {})
+      def initialize(api, *args)
         @api = api
-        @params = params
+        @args = args
+        @params = Scale.hash(args.pop) if args.last.is_a?(Hash)
       end
 
       def process

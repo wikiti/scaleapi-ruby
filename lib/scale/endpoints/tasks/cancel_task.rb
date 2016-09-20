@@ -2,8 +2,15 @@ module Scale
   module Endpoints
     module Tasks
       class CancelTask < TaskEndpoint
+        attr_reader :task_id
+
+        def initialize(api, *args)
+          super
+          @task_id = args.first
+        end
+
         def process
-          response = api.request :post, path("#{fetch_param :task_id}/cancel")
+          response = api.request :post, path("#{task_id}/cancel")
           build_task response
         end
 

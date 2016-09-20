@@ -2,8 +2,15 @@ module Scale
   module Endpoints
     module Tasks
       class RetrieveTask < TaskEndpoint
+        attr_reader :task_id
+
+        def initialize(api, *args)
+          super
+          @task_id = args.first
+        end
+
         def process
-          response = api.request :get, path(fetch_param :task_id)
+          response = api.request :get, path(task_id)
           build_task response
         end
 

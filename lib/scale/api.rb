@@ -19,14 +19,12 @@ module Scale
       validate!
     end
 
-    def request(type, path, payload)
-      payload = Scale.hash(default_request_params).merge(Scale.hash(payload)) if payload.is_a?(Hash)
-
+    def request(type, path, payload = {})
       RestClient::Request.new(
         method: type,
         url: url(path),
         user: api_key,
-        payload: Scale.hash(default_request_params).merge(Scale.hash(hash)),
+        payload: Scale.hash(default_request_params).merge(Scale.hash(payload)),
         headers: { accept: :json, content_type: :json }
       ).execute
     rescue RestClient::Exception => e
@@ -34,12 +32,9 @@ module Scale
     end
 
     # Endpoint helper
-    def method_missing(m, *array, **hash)
+    def method_missing(m, *array)
       endpoint = Scale::Endpoints::Endpoint.descendants.find { |e| e.match? m }
-      if endpoint
-        payload = hash.empty? ? array.first : hash
-        endpoint.new(self, payload).process
-      end
+      return endpoint.new(self, *array).process if endpoint
       super
     end
 

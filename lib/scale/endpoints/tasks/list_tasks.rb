@@ -8,7 +8,7 @@ module Scale
         end
 
         def self.shortcut
-          'list_tasks'
+          'tasks'
         end
 
         protected

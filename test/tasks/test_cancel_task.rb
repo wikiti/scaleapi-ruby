@@ -13,7 +13,7 @@ class TestCancelTask < Test::Unit::TestCase
 
         # Then, try canceling it
         assert_raise Scale::HttpError do
-          scale.cancel_task task_id: task.id
+          scale.cancel_task task.id
         end
       end
     end

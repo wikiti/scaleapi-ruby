@@ -12,7 +12,7 @@ class TestRetrieveTask < Test::Unit::TestCase
                                             choices: ['He is happy', 'He is not happy']
 
         # Retrieve that task, and compare it with the previous task
-        task2 = scale.retrieve_task task_id: task1.id
+        task2 = scale.retrieve_task task1.id
         assert_equal(task1.id, task2.id)
         assert_equal(task1.instruction, task2.instruction)
         assert_equal(task1.callback_url, task2.callback_url)
@@ -29,7 +29,7 @@ class TestRetrieveTask < Test::Unit::TestCase
     should 'raise an http error' do
       VCR.use_cassette 'tasks' do
         assert_raise Scale::HttpError do
-          scale.retrieve_task task_id: @fake_task_id
+          scale.retrieve_task @fake_task_id
         end
       end
     end
