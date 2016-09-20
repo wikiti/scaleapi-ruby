@@ -3,7 +3,7 @@ module Scale
     module Tasks
       class CreatePhonecallTask < TaskEndpoint
         def process
-          response = api.request :post, path('comparison'), params
+          response = api.request :post, path('phonecall'), params
           build_task response
         end
 

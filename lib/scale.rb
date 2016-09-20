@@ -2,6 +2,7 @@ require 'uri'
 require 'time'
 require 'rest-client'
 require 'json'
+require 'active_support/core_ext/hash/indifferent_access'
 
 require 'scale/api'
 require 'scale/generic_error'
@@ -25,9 +26,6 @@ require 'scale/endpoints/tasks/list_tasks'
 require 'scale/callbacks/callback'
 require 'scale/callbacks/task_callback'
 
-require 'pry'
-require 'pry-nav'
-
 module Scale
   def self.setup(params = {})
     Scale::API.new params
@@ -35,5 +33,9 @@ module Scale
 
   def self.build_callback(json)
     Scale::Callbacks::Callback.build(json)
+  end
+
+  def self.hash(data = nil)
+    ActiveSupport::HashWithIndifferentAccess.new data
   end
 end
