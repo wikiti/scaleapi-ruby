@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/scaleapi-ruby.svg)](https://badge.fury.io/rb/scaleapi-ruby) [![Dependency Status](https://gemnasium.com/badges/github.com/wikiti/scaleapi-ruby.svg)](https://gemnasium.com/github.com/wikiti/scaleapi-ruby) [![CircleCI](https://circleci.com/gh/wikiti/scaleapi-ruby.svg?style=shield)](https://circleci.com/gh/wikiti/scaleapi-ruby)
+
 # ScaleAPI for Ruby
 
 A simple ruby wrapper for the [Scale](http://www.scaleapi.com) HTTP API. Documentation for this API is available [here](https://docs.scaleapi.com/).
@@ -205,10 +207,10 @@ The api initialization accepts the following options:
 
 | Name | Description | Default |
 | ---- | ----------- | ------- |
-| `endpoint` | Endpoint used in the http requests. | https://api.scaleapi.com/v1/ |
-| `api_key` | API key used in the http requests. |  |
-| `callback_key` | API key used to validate callback POST requests. |  |
-| `default_request_params` | Default parameters (payload) for the API requests | |
+| `endpoint` | Endpoint used in the http requests. | `'https://api.scaleapi.com/v1/'` |
+| `api_key` | API key used in the http requests. | `nil` |
+| `callback_key` | API key used to validate callback POST requests. | `nil` |
+| `default_request_params` | Default parameters (payload) for the API requests | `{}` |
 
 For example, `default_request_params` can be used to always set the same `callback_url` value:
 
