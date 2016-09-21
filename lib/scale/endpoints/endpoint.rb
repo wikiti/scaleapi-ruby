@@ -14,15 +14,11 @@ module Scale
       end
 
       def self.shortcut
-        ''
+        nil
       end
 
       def self.match?(method)
         shortcut.to_s == method.to_s
-      end
-
-      def self.descendants
-        ObjectSpace.each_object(::Class).select {|klass| klass < self }
       end
 
       protected

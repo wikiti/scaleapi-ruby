@@ -1,0 +1,29 @@
+{
+  "task": {
+    "completed_at": "2016-06-23T21:54:44.904Z",
+    "response": {
+      "category": "big",
+      "status_code": "200"
+    },
+    "created_at": "2016-06-23T20:08:31.573Z",
+    "callback_url": "http://www.example.com/callback",
+    "type": "categorization",
+    "status": "completed",
+    "instruction": "Is this object red or blue?",
+    "urgency": "day",
+    "params": {
+      "attachment_type": "text",
+      "attachment": "tomato",
+      "categories": [
+        "red",
+        "blue"
+      ]
+    },
+    "task_id": "576c41bf13e36b0600b02b34"
+  },
+  "response": {
+    "status_code": "200",
+    "category": "red"
+  },
+  "task_id": "576c41bf13e36b0600b02b34"
+}

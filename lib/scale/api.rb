@@ -31,9 +31,24 @@ module Scale
       raise HttpError, e
     end
 
-    # Endpoint helper
+    def build_callback(data, type = 'task', options = {})
+      options = Scale.hash options
+      matchers = Scale.descendants(Scale::Callbacks::Base)
+      klass = matchers.find { |c| c.match? type }
+
+      validate_callback_handler! klass
+      validate_callback_token! options[:callback_key]
+
+      klass.new data
+    end
+
+    def valid_callback_key?(key)
+      key.to_s == callback_key.to_s
+    end
+
+    # Endpoint helper. If the method is not defined, then try looking into the available endpoints.
     def method_missing(m, *array)
-      endpoint = Scale::Endpoints::Endpoint.descendants.find { |e| e.match? m }
+      endpoint = Scale.descendants(Scale::Endpoints::Endpoint).find { |e| e.match? m }
       return endpoint.new(self, *array).process if endpoint
       super
     end
@@ -42,7 +57,8 @@ module Scale
 
     def validate!
       validate_endpoint!
-      validate_token!
+      validate_api_key!
+      validate_callback_key!
     end
 
     def fetch_attribute(name)
@@ -57,17 +73,31 @@ module Scale
     #      Validators
     # -------------------
 
+    def validate_callback_handler!(klass)
+      raise GenericError, "Callback handler '#{name}' not found. Try #{matchers.map(&:shortcut).join ','}" unless klass
+    end
+
+    def validate_callback_token!(key)
+      return if callback_key.nil?
+      raise GenericError, "Invalid HTTP callback with key #{key}" unless valid_callback_key? key
+    end
+
+    def validate_callback_key!
+      return if callback_key.nil?
+      raise GenericError, invalid_attribute('callback_key') unless api_key.to_s != ''
+    end
+
     def validate_endpoint!
       valid = URI.parse "endpoint" rescue nil
       raise GenericError, invalid_attribute('endpoint') unless valid
     end
 
-    def validate_token!
+    def validate_api_key!
       raise GenericError, invalid_attribute('api_key') unless api_key.to_s != ''
     end
 
     def invalid_attribute(name)
-      "Invalid Scale API #{name} (current value: `#{fetch_attribute name}`). Please, set a valid `#{name}` parameter"
+      "Invalid Scale API `#{name}`. Please, set a valid `#{name}` parameter"
     end
 
   end

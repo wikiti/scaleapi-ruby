@@ -17,7 +17,16 @@ require 'scale'
 class Test::Unit::TestCase
   def scale
     @scale ||= Scale.setup api_key: (ENV['SCALE_API_KEY'] || 'test_abcdefghijklmopqrstuvwxyz'),
-                           default_request_params: { callback_url: 'http://www.example.com/callback' }
+                           default_request_params: { callback_url: 'http://www.example.com/callback' },
+                           callback_key: 'TEST'
+  end
+
+  def load_file(file)
+    File.read "test/fixtures/#{file}"
+  end
+
+  def load_json(file)
+    Scale.hash JSON.parse(load_file(file))
   end
 end
 
