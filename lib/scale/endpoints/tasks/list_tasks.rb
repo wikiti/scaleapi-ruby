@@ -14,12 +14,12 @@ module Scale
         protected
 
         def path
-          "tasks"
+          'tasks'
         end
 
         def build_tasks(response)
-          response = parse(response)
-          response.map { |obj| build_task obj }
+          response = parse response
+          Resources::Tasks.new response['docs'].map { |obj| build_task obj }, response
         end
       end
     end

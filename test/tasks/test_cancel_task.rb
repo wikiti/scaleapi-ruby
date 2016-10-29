@@ -9,6 +9,7 @@ class TestCancelTask < Test::Unit::TestCase
                                            phone_number: '5055006865',
                                            entity_name: 'Alexandr Wang',
                                            fields: { email: 'Email Address' },
+                                           script: 'Hello ! Are you happy today? (pause) One more thing - what is your email address?',
                                            choices: ['He is happy', 'He is not happy']
 
         # Then, try canceling it

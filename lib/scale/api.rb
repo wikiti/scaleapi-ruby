@@ -24,7 +24,7 @@ module Scale
         method: type,
         url: url(path),
         user: api_key,
-        payload: Scale.hash(default_request_params).merge(Scale.hash(payload)),
+        payload: Scale.hash(default_request_params).merge(Scale.hash(payload)).to_json,
         headers: { accept: :json, content_type: :json }
       ).execute
     rescue RestClient::Exception => e

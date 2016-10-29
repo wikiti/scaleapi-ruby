@@ -1,12 +1,15 @@
 module Scale
   module Resources
-    class Task < Base
+    class Task
+      include Base
+
       ATTRIBUTES = %w(task_id type instruction params urgency response callback_url status created_at completed_at)
       ATTRIBUTES.each { |attr| attr_reader attr }
 
       alias_method :id, :task_id
 
       def initialize(json = {})
+
         ATTRIBUTES.each do |attr|
           instance_variable_set "@#{attr}", json[attr]
         end

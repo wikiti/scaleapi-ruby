@@ -87,6 +87,7 @@ scale.create_phonecall_task(
   instruction: "Call this person and tell me his email address. Ask if he's happy too.",
   phone_number: '5055006865',
   entity_name: 'Alexandr Wang',
+  script: 'Hello ! Are you happy today? (pause) One more thing - what is your email address?',
   fields: { email: 'Email Address' },
   choices: ['He is happy', 'He is not happy']
 )
@@ -114,12 +115,24 @@ scale.create_comparison_task(
 Check [this](https://docs.scaleapi.com/#create-annotation-task-bounding-box) for further information.
 
 ```ruby
-scale.create_comparison_task(
+scale.create_annotation_task(
   callback_url: 'http://www.example.com/callback',
   instruction: 'Draw a box around each baby cow and big cow.',
   attachment_type: "image",
   attachment: "http://i.imgur.com/v4cBreD.jpg",
-  objects_to_annotate: ["baby cow", "big cow"]
+  objects_to_annotate: ["baby cow", "big cow"],
+  examples: [
+    {
+      correct: false,
+      image: 'http://i.imgur.com/lj6e98s.jpg',
+      explanation: 'The boxes are tight and accurate'
+    },
+    {
+      correct: true,
+      image: 'http://i.imgur.com/HIrvIDq.jpg',
+      explanation: 'The boxes are neither accurate nor complete'
+    }
+  ]
 )
 ```
 
@@ -151,7 +164,7 @@ Check [this](https://docs.scaleapi.com/#list-all-tasks) for further information.
 Retrieve a list (`Array`) of all tasks.
 
 ```ruby
-tasks = scale.tasks
+tasks = scale.tasks # Scale::Resources::Tasks
 tasks.all? { |t| t.is_a? Scale::Resources::Task } # true
 ```
 

@@ -1,6 +1,6 @@
 module Scale
   module Resources
-    class Base
+    module Base
     end
   end
 end

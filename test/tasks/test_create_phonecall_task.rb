@@ -7,6 +7,7 @@ class TestCreatePhonecallTask < Test::Unit::TestCase
                                      phone_number: '5055006865',
                                      entity_name: 'Alexandr Wang',
                                      fields: { email: 'Email Address' },
+                                     script: 'Hello ! Are you happy today? (pause) One more thing - what is your email address?',
                                      choices: ['He is happy', 'He is not happy']
 
       @invalid_parameters = Scale.hash instruction: 'Test instruction',
@@ -17,7 +18,7 @@ class TestCreatePhonecallTask < Test::Unit::TestCase
       VCR.use_cassette 'tasks' do
         task = scale.create_phonecall_task @valid_parameters
         assert_equal task.class, Scale::Resources::Task
-        assert_equal task.params, @valid_parameters.select { |k| %Q(phone_number entity_name fields choices).include? k.to_s }
+        assert_equal task.params, @valid_parameters.select { |k| %Q(phone_number entity_name fields choices script).include? k.to_s }
       end
     end
 

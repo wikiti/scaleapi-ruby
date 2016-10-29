@@ -11,6 +11,7 @@ require 'scale/http_error'
 
 require 'scale/resources/base'
 require 'scale/resources/task'
+require 'scale/resources/tasks'
 
 require 'scale/endpoints/endpoint'
 
