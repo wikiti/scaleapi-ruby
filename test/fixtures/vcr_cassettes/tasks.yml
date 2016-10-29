@@ -5,7 +5,11 @@ http_interactions:
     uri: https://api.scaleapi.com/v1/task/phonecall
     body:
       encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback&instruction=Call+this+person+and+tell+me+his+email+address.+Ask+if+he%27s+happy+too.&phone_number=5055006865&entity_name=Alexandr+Wang&fields[email]=Email+Address&choices[]=He+is+happy&choices[]=He+is+not+happy
+      string: '{"callback_url":"http://www.example.com/callback","instruction":"Call
+        this person and tell me his email address. Ask if he''s happy too.","phone_number":"5055006865","entity_name":"Alexandr
+        Wang","fields":{"email":"Email Address"},"script":"Hello ! Are you happy today?
+        (pause) One more thing - what is your email address?","choices":["He is happy","He
+        is not happy"]}'
     headers:
       Accept:
       - application/json
@@ -14,9 +18,9 @@ http_interactions:
       User-Agent:
       - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
       Content-Length:
-      - '263'
+      - '367'
       Host:
       - api.scaleapi.com
       Authorization:
@@ -27,7 +31,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 20 Sep 2016 20:33:49 GMT
+      - Sat, 29 Oct 2016 18:26:15 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -35,23 +39,25 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d39ec5d41e60cdcd371dba28c989f0b3f1474403625; expires=Wed, 20-Sep-17
-        20:33:45 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IAXNQgdX///8HYgAGKK1iAAD3Z2EBbAAAAAFtAAAABXdlYi4xalCE7IkFbf79r1lpim0KINdzkUSJ;
-        Version=1; Expires=Wed, 21-Sep-2016 20:33:49 GMT; Max-Age=86400; Domain=api.scaleapi.com;
+      - __cfduid=da2c78797a6c3965e4e71162d41cde6e01477765575; expires=Sun, 29-Oct-17
+        18:26:15 GMT; path=/; domain=.scaleapi.com; HttpOnly
+      - heroku-session-affinity=ACyDaANoA24IARZHr7D///8HYgALrodiAAE6PGEBbAAAAAFtAAAABXdlYi4xajlzbcLVRbo3TJTC4ixrxxPp5XqG;
+        Version=1; Expires=Sun, 30-Oct-2016 18:26:15 GMT; Max-Age=86400; Domain=api.scaleapi.com;
         Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
+      - scaleCookie.sig=xURXFdn3awS9cRKs__bzKqfRvL4; path=/; httponly
+      - scaleCookie=eyJmbGFzaCI6W10sInBhc3Nwb3J0Ijp7fX0=; path=/; httponly
       X-Powered-By:
       - Express
       Access-Control-Allow-Origin:
-      - "*"
+      - https://docs.scaleapi.com
       Access-Control-Allow-Methods:
       - GET,PUT,POST,DELETE
       Access-Control-Allow-Headers:
       - Content-Type
+      Access-Control-Allow-Credentials:
+      - 'true'
       Etag:
-      - W/"1af-hH9RmZqyYUwWkCDAAmTDNQ"
+      - W/"21a-zx5wUs5VFgRa729Un42EUA"
       Vary:
       - Accept-Encoding
       Via:
@@ -63,28 +69,29 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Cf-Ray:
-      - 2e580de34b7b08de-CDG
+      - 2f98acbbebfd2f77-MAD
       Content-Encoding:
       - gzip
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAAzTKMW7DMAwAwK8QXLo4tuIUQaMt6Bc6ZQlYia2E0JIg0nCD
-        fr7w0PVwvxg6k3G8k6HH2R3PB3c5zO5jdv508q+X0Z3fbjhgIJFPCo/72gU9
-        JrPmp2nbtpF/aGnCY6jL9L9wQHs2Ro8t1cI744BqZKvuyCXm8o0D5qLW12C5
-        FvT4TiJgKSs07loLUIlgLAILw868UBagGDurjnDVB+QvSPyikKi1J1itfwAA
-        AP//LI/LCsIwEEV/pdx1kPhIH9l1IfgHLkRC2kw12KaSpGCR/rs0djmXORzO
-        DgyTf5BrZ0gYPYPhrb0eAuQX7XO0LQXIGy6U2Y0D2y43xm25M3SWepOo5IXE
-        Ofnrvx8LA7lo46ycHtbYuqePdsZnV53qUrxy09CQh4TgQnCel7lYURtUpBAh
-        o5+IIerwUtasbwXtK3MwVSVORhxLztuCuqbD8gMAAP//AwB8PcyvrwEAAA==
+        H4sIAAAAAAAAA1SQW4vbMBCF/8r0vLQFJXHS5rJ6WUIp7FtfCoWWYibWJBaR
+        JSONyZqQ/16cpgt9nI85nMsVTRZWcTUrLFbVcjNbVrPV0/flzq42drmeV7vd
+        Txg0HMKBm3M95ACLVrW3i8XlcpnLK3d9kHmTusW/Lxjo2Ass+jZFmTAMirIO
+        ZYISnY8nGPhYNA+N+hRh8YVDIG19oV5ySZE4OlIJgTqhCUvHPhA7l6WUOe3L
+        mfyRWnlfqOW+H0lTmsNgyCeJzQgLxyMMes7cFdgrmjb5RgrsL7wI+YcO5nHF
+        pA/y2+DoJbi76u4Li693//1ff9wMSpN9P033IiEkekf7LDSm4S2O4/GZPvQ8
+        FPlI36JQl7JMHeOJZnRpWSfbMQ35/3LPMJCoXsc6cjctuQ/yytFl+sH36e7L
+        1nHoDpJhsa7W66ra7DbrKZcvtUpRWM2DGCiXc+3d9LZbfpanZns4uu3hU7Wp
+        qqOsttUWBp0oO1aGvd5ufwAAAP//AwBlBU4/GgIAAA==
     http_version: 
-  recorded_at: Tue, 20 Sep 2016 20:33:46 GMT
+  recorded_at: Sat, 29 Oct 2016 18:26:15 GMT
 - request:
     method: post
-    uri: https://api.scaleapi.com/v1/task/57e19d2d9954d53800c7efbf/cancel
+    uri: https://api.scaleapi.com/v1/task/5814e9c7bfd7b30600fe2707/cancel
     body:
       encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback
+      string: '{"callback_url":"http://www.example.com/callback"}'
     headers:
       Accept:
       - application/json
@@ -93,9 +100,9 @@ http_interactions:
       User-Agent:
       - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
       Content-Length:
-      - '52'
+      - '50'
       Host:
       - api.scaleapi.com
       Authorization:
@@ -106,31 +113,33 @@ http_interactions:
       message: Internal Server Error
     headers:
       Date:
-      - Tue, 20 Sep 2016 20:33:49 GMT
+      - Sat, 29 Oct 2016 18:26:15 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '66'
+      - '84'
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=db1a2f80028a3af817a9bd8330ccf0ab11474403629; expires=Wed, 20-Sep-17
-        20:33:49 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IAVbhMdf///8HYgAGKK1iAA0OGmEBbAAAAAFtAAAABXdlYi4xajrRD26eXZ5r7jUOQCTI6mrx4qP7;
-        Version=1; Expires=Wed, 21-Sep-2016 20:33:49 GMT; Max-Age=86400; Domain=api.scaleapi.com;
+      - __cfduid=db8ffa3ecd203f1266defb1c8471726031477765575; expires=Sun, 29-Oct-17
+        18:26:15 GMT; path=/; domain=.scaleapi.com; HttpOnly
+      - heroku-session-affinity=ACyDaANoA24IAXPb/a7///8HYgALrodiAAYpaWEBbAAAAAFtAAAABXdlYi4xatV1skAeTieHuxyrkl+4zq0FeuYz;
+        Version=1; Expires=Sun, 30-Oct-2016 18:26:15 GMT; Max-Age=86400; Domain=api.scaleapi.com;
         Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
+      - scaleCookie.sig=xURXFdn3awS9cRKs__bzKqfRvL4; path=/; httponly
+      - scaleCookie=eyJmbGFzaCI6W10sInBhc3Nwb3J0Ijp7fX0=; path=/; httponly
       X-Powered-By:
       - Express
       Access-Control-Allow-Origin:
-      - "*"
+      - https://docs.scaleapi.com
       Access-Control-Allow-Methods:
       - GET,PUT,POST,DELETE
       Access-Control-Allow-Headers:
       - Content-Type
+      Access-Control-Allow-Credentials:
+      - 'true'
       Etag:
-      - W/"42-+FzgKDURClpieXRtAvqOKQ"
+      - W/"54-CEqJp2g87nXs5K5WXZFU6A"
       Vary:
       - Accept-Encoding
       Via:
@@ -142,18 +151,23 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Cf-Ray:
-      - 2e580dfc781b08fc-CDG
+      - 2f98acbddba52f4d-MAD
     body:
       encoding: UTF-8
-      string: '{"error":"The task was already completed and cannot be canceled."}'
+      string: '{"status_code":500,"error":"The task was already completed and cannot
+        be canceled."}'
     http_version: 
-  recorded_at: Tue, 20 Sep 2016 20:33:46 GMT
+  recorded_at: Sat, 29 Oct 2016 18:26:15 GMT
 - request:
     method: post
     uri: https://api.scaleapi.com/v1/task/annotation
     body:
       encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback&instruction=Draw+a+box+around+each+baby+cow+and+big+cow.&attachment_type=image&attachment=http%3A%2F%2Fi.imgur.com%2Fv4cBreD.jpg&objects_to_annotate[]=baby+cow&objects_to_annotate[]=big+cow&with_labels=true
+      string: '{"callback_url":"http://www.example.com/callback","instruction":"Draw
+        a box around each baby cow and big cow.","attachment_type":"image","attachment":"http://i.imgur.com/v4cBreD.jpg","objects_to_annotate":["baby
+        cow","big cow"],"with_labels":true,"examples":[{"correct":false,"image":"http://i.imgur.com/lj6e98s.jpg","explanation":"The
+        boxes are tight and accurate"},{"correct":true,"image":"http://i.imgur.com/HIrvIDq.jpg","explanation":"The
+        boxes are neither accurate nor complete"}]}'
     headers:
       Accept:
       - application/json
@@ -162,9 +176,9 @@ http_interactions:
       User-Agent:
       - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
       Content-Length:
-      - '259'
+      - '486'
       Host:
       - api.scaleapi.com
       Authorization:
@@ -175,7 +189,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 20 Sep 2016 20:33:50 GMT
+      - Sat, 29 Oct 2016 18:26:15 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -183,23 +197,25 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d7ade39dd8f459bfc5b17c73797b1802f1474403630; expires=Wed, 20-Sep-17
-        20:33:50 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IAVGVENb///8HYgAGKK5iAAgxvWEBbAAAAAFtAAAABXdlYi4xavrPKty01xSdjP0+z1i+1FzeJaqB;
-        Version=1; Expires=Wed, 21-Sep-2016 20:33:50 GMT; Max-Age=86400; Domain=api.scaleapi.com;
+      - __cfduid=d0ddaf6a2fa45c60a3d91de11c23de3db1477765575; expires=Sun, 29-Oct-17
+        18:26:15 GMT; path=/; domain=.scaleapi.com; HttpOnly
+      - heroku-session-affinity=ACyDaANoA24IARUcqK7///8HYgALrodiAAsJ72EBbAAAAAFtAAAABXdlYi4xah5Hqk0CeZG51QMTKhvOzAZbhDY+;
+        Version=1; Expires=Sun, 30-Oct-2016 18:26:15 GMT; Max-Age=86400; Domain=api.scaleapi.com;
         Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
+      - scaleCookie.sig=xURXFdn3awS9cRKs__bzKqfRvL4; path=/; httponly
+      - scaleCookie=eyJmbGFzaCI6W10sInBhc3Nwb3J0Ijp7fX0=; path=/; httponly
       X-Powered-By:
       - Express
       Access-Control-Allow-Origin:
-      - "*"
+      - https://docs.scaleapi.com
       Access-Control-Allow-Methods:
       - GET,PUT,POST,DELETE
       Access-Control-Allow-Headers:
       - Content-Type
+      Access-Control-Allow-Credentials:
+      - 'true'
       Etag:
-      - W/"195-QWENveudsuqS93GdxosWgA"
+      - W/"292-uwiW2JZgfsp7gA9e2GelTA"
       Vary:
       - Accept-Encoding
       Via:
@@ -211,27 +227,29 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Cf-Ray:
-      - 2e580e00e9141515-CDG
+      - 2f98acbfdc8d5474-MAD
       Content-Encoding:
       - gzip
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAA0xQS26DMBS8ijVrhxAIbfGyyhG6alWhh3kFJ2CQ/ShBUe5e
-        NUrU7kaaj2bmAhuYhJuKBAZZunvapOUmS9+y1OS5KdKkyMt3aFjq+5rsqZpD
-        D4NOZDLb7bIsCZ9pmHpO7DhsHypoyDoxDMj7UUjc6KERhWSOMJjYN8630JhD
-        y96uMGhohYbzUcJsbwaDQ6BFkarHs6Iwzr5RTLZTNdWrsuOiyDeqdu0vTqAx
-        UaAhwlywOOmqnmruI4yEmTXG+shWYiVjdS/FMB94ZEHjnoRPDRIh2w3spboP
-        cQO1jP/M3w0ucUM7h9sF33v7GviQHKcWVw0XK+EojxJC8VS5BgbFM+/KJuOy
-        LPZNkb+kqX3mL7vD9QcAAP//AwCENVttlQEAAA==
+        H4sIAAAAAAAAA4SRzW7bMBCEX4WYMyNLbuIfHgsfmntODQJhRa0lOhKpkqso
+        huF3L+TYbVEE7Y3kLme+nT3BRibhuiSBwTIvVndFfrfcPhUbs1yZ4iFbF8V3
+        aFjquorsaznGDgatyGAWi2maMn6nfug4s6Ff3LqgIceBYUDeByFxwUMjCcmY
+        YDCwr51voDHGhr09wqCmIzScTxJHe/lgsIs0KVJVeFcUw+hrxWRbVVF1VDZM
+        inytKtfM5wwaA0XqE8wJV6gE8zxfho48XTWfWp4FOSmKrMQ1rVx0yNoxkvAM
+        0VPDv6d0meubMV4m7A4r3m5SdhhmehtiZCswe+oSn/W/vTw7aTn+clI+RGXD
+        DPo/22+P8e1x9+NvW4kjn180Jidt2VHFXfp41AjVga2kUkJ53QHDPOMWHTSu
+        weFFg0TItj17Ka97+2D5s/I52Nu9/Rp5dwE7a7hUCie5QQil19LVMHjYFPe8
+        tetqX6+rL/kqz/e8XOdbaPQsVJMQzOl8/gkAAP//AwDVGZOFkgIAAA==
     http_version: 
-  recorded_at: Tue, 20 Sep 2016 20:33:47 GMT
+  recorded_at: Sat, 29 Oct 2016 18:26:15 GMT
 - request:
     method: post
     uri: https://api.scaleapi.com/v1/task/annotation
     body:
       encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback
+      string: '{"callback_url":"http://www.example.com/callback"}'
     headers:
       Accept:
       - application/json
@@ -240,9 +258,9 @@ http_interactions:
       User-Agent:
       - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
       Content-Length:
-      - '52'
+      - '50'
       Host:
       - api.scaleapi.com
       Authorization:
@@ -253,469 +271,33 @@ http_interactions:
       message: Bad Request
     headers:
       Date:
-      - Tue, 20 Sep 2016 20:33:51 GMT
+      - Sat, 29 Oct 2016 18:26:16 GMT
       Content-Type:
       - application/json; charset=utf-8
-      Content-Length:
-      - '110'
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - __cfduid=d61efbc4debd32d1ae2dc029f60bd0b1c1474403630; expires=Wed, 20-Sep-17
-        20:33:50 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IAVS0e9X///8HYgAGKK9iAAYQl2EBbAAAAAFtAAAABXdlYi4xagKnd9cFekxkVCSTgMSVXPV8IcEu;
-        Version=1; Expires=Wed, 21-Sep-2016 20:33:51 GMT; Max-Age=86400; Domain=api.scaleapi.com;
-        Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
-      X-Powered-By:
-      - Express
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET,PUT,POST,DELETE
-      Access-Control-Allow-Headers:
-      - Content-Type
-      Etag:
-      - W/"6e-3CVLHbmZIEWFI2BiZeBrFQ"
-      Vary:
-      - Accept-Encoding
-      Via:
-      - 1.1 vegur
-      Strict-Transport-Security:
-      - max-age=2592000; includeSubDomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - cloudflare-nginx
-      Cf-Ray:
-      - 2e580e053da22f2f-MAD
-    body:
-      encoding: UTF-8
-      string: '{"status_code":400,"message":"Please provide a plaintext instruction
-        to the worker in the instruction field."}'
-    http_version: 
-  recorded_at: Tue, 20 Sep 2016 20:33:48 GMT
-- request:
-    method: post
-    uri: https://api.scaleapi.com/v1/task/annotation
-    body:
-      encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Content-Length:
-      - '52'
-      Host:
-      - api.scaleapi.com
-      Authorization:
-      - Basic dGVzdF81YzllZDRmMzIwYWVhZjJjZjcwZjUwODZjOTdlN2Y0Mzo=
-  response:
-    status:
-      code: 400
-      message: Bad Request
-    headers:
-      Date:
-      - Tue, 20 Sep 2016 20:33:55 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '110'
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - __cfduid=d2fd46ddf206410e3703fe2e7ab42a7f11474403631; expires=Wed, 20-Sep-17
-        20:33:51 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IARMYfNT///8HYgAGKLBiAABtDWEBbAAAAAFtAAAABXdlYi4xajOP5NIpkn5pBxbu55vIQfrsKF22;
-        Version=1; Expires=Wed, 21-Sep-2016 20:33:52 GMT; Max-Age=86400; Domain=api.scaleapi.com;
-        Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
-      X-Powered-By:
-      - Express
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET,PUT,POST,DELETE
-      Access-Control-Allow-Headers:
-      - Content-Type
-      Etag:
-      - W/"6e-3CVLHbmZIEWFI2BiZeBrFQ"
-      Vary:
-      - Accept-Encoding
-      Via:
-      - 1.1 vegur
-      Strict-Transport-Security:
-      - max-age=2592000; includeSubDomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - cloudflare-nginx
-      Cf-Ray:
-      - 2e580e09fe023bd5-CDG
-    body:
-      encoding: UTF-8
-      string: '{"status_code":400,"message":"Please provide a plaintext instruction
-        to the worker in the instruction field."}'
-    http_version: 
-  recorded_at: Tue, 20 Sep 2016 20:33:52 GMT
-- request:
-    method: post
-    uri: https://api.scaleapi.com/v1/task/comparison
-    body:
-      encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback&instruction=Do+the+objects+in+these+images+have+the+same+pattern%3F&attachment_type=image&choices[]=yes&choices[]=no&attachments[]=http%3A%2F%2Fi.ebayimg.com%2F00%2F%24T2eC16dHJGwFFZKjy5ZjBRfNyMC4Ig%7E%7E_32.JPG&attachments[]=http%3A%2F%2Fimages.wisegeek.com%2Fcheckered-tablecloth.jpg
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Content-Length:
-      - '338'
-      Host:
-      - api.scaleapi.com
-      Authorization:
-      - Basic dGVzdF81YzllZDRmMzIwYWVhZjJjZjcwZjUwODZjOTdlN2Y0Mzo=
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Tue, 20 Sep 2016 20:33:56 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - __cfduid=d260c8fd1dd0df662a046032bf5ce27721474403635; expires=Wed, 20-Sep-17
-        20:33:55 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IAXNI+NX///8HYgAGKLRiAAQNemEBbAAAAAFtAAAABXdlYi4xapCNW+lh7MNaS0BGz1rKEj9DyDuH;
-        Version=1; Expires=Wed, 21-Sep-2016 20:33:56 GMT; Max-Age=86400; Domain=api.scaleapi.com;
-        Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
-      X-Powered-By:
-      - Express
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET,PUT,POST,DELETE
-      Access-Control-Allow-Headers:
-      - Content-Type
-      Etag:
-      - W/"1d0-YcFKk+sZki5BVcoQ4NJTag"
-      Vary:
-      - Accept-Encoding
-      Via:
-      - 1.1 vegur
-      Strict-Transport-Security:
-      - max-age=2592000; includeSubDomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - cloudflare-nginx
-      Cf-Ray:
-      - 2e580e21ee1e048b-CDG
-      Content-Encoding:
-      - gzip
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAA0xQTW/TQBT8K9aI48Zx7Dghe0GiqIUiEKp6Cqqsl/WrvYm9
-        a+0+Y6yq/e0IUxDH0XxoZp5gApNwXZFAI882u1V2WOXZfZ7potDlLs332yMU
-        DHXdicylGkMHjVZk0Ov1NE0p/6R+6Dg1vl//VUFB5oGhYXw/ULDROyhEIRkj
-        NAZ2tXUNFMbQsDMzNGqaoWBdlDAasd5B44NPpOXEn85sJCbW/YaRE9tTwzFp
-        6Qcvgkg9JwOJcHDvoDBQoD5CP8G03hqO0N8xc4SC83hQIBEybc9OqteiSyT+
-        ZxbT61Cb8olm2zfLzCxbv7nP+Wqzqz/e3kzX18fP57k8nt/fPX6dv1xtPzUv
-        L1WRp7ffbqD+RSyd08lGbpgvf/5q2Vw4cL0SOnVsOi9teh4aPDwr2FgJR4GW
-        MLKCULxUtoZGuefNoS62h0O5rcvibZaZPT+aHM+/AAAA//8DAG0OqgzQAQAA
-    http_version: 
-  recorded_at: Tue, 20 Sep 2016 20:33:53 GMT
-- request:
-    method: post
-    uri: https://api.scaleapi.com/v1/task/comparison
-    body:
-      encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback&instruction=Test+instruction&choices[]=a&choices[]=b
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Content-Length:
-      - '105'
-      Host:
-      - api.scaleapi.com
-      Authorization:
-      - Basic dGVzdF81YzllZDRmMzIwYWVhZjJjZjcwZjUwODZjOTdlN2Y0Mzo=
-  response:
-    status:
-      code: 400
-      message: Bad Request
-    headers:
-      Date:
-      - Tue, 20 Sep 2016 20:33:56 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '98'
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - __cfduid=d4c7f6f9a59a988f8729d5a330d64c1611474403636; expires=Wed, 20-Sep-17
-        20:33:56 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IARf1mO////8HYgAGKLRiAA5e/GEBbAAAAAFtAAAABXdlYi4xaql8XjExiaNOIwIpyKwv2tIQ77wQ;
-        Version=1; Expires=Wed, 21-Sep-2016 20:33:56 GMT; Max-Age=86400; Domain=api.scaleapi.com;
-        Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
-      X-Powered-By:
-      - Express
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET,PUT,POST,DELETE
-      Access-Control-Allow-Headers:
-      - Content-Type
-      Etag:
-      - W/"62-7Rkh4lSqRHmEsijDGLdcoQ"
-      Vary:
-      - Accept-Encoding
-      Via:
-      - 1.1 vegur
-      Strict-Transport-Security:
-      - max-age=2592000; includeSubDomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - cloudflare-nginx
-      Cf-Ray:
-      - 2e580e28dd823c41-CDG
-    body:
-      encoding: UTF-8
-      string: '{"status_code":400,"message":"Please provide attachments for the worker
-        to compare for the task."}'
-    http_version: 
-  recorded_at: Tue, 20 Sep 2016 20:33:54 GMT
-- request:
-    method: post
-    uri: https://api.scaleapi.com/v1/task/comparison
-    body:
-      encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback&instruction=Test+instruction&choices[]=a&choices[]=b
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Content-Length:
-      - '105'
-      Host:
-      - api.scaleapi.com
-      Authorization:
-      - Basic dGVzdF81YzllZDRmMzIwYWVhZjJjZjcwZjUwODZjOTdlN2Y0Mzo=
-  response:
-    status:
-      code: 400
-      message: Bad Request
-    headers:
-      Date:
-      - Tue, 20 Sep 2016 20:33:57 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '98'
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - __cfduid=d704d0849fcab06108ea278d34eef93a21474403637; expires=Wed, 20-Sep-17
-        20:33:57 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IAXIzrNX///8HYgAGKLViAAkSaGEBbAAAAAFtAAAABXdlYi4xalL5kAHnzxzEkCHfi2Cg7Z5aEn7o;
-        Version=1; Expires=Wed, 21-Sep-2016 20:33:57 GMT; Max-Age=86400; Domain=api.scaleapi.com;
-        Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
-      X-Powered-By:
-      - Express
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET,PUT,POST,DELETE
-      Access-Control-Allow-Headers:
-      - Content-Type
-      Etag:
-      - W/"62-7Rkh4lSqRHmEsijDGLdcoQ"
-      Vary:
-      - Accept-Encoding
-      Via:
-      - 1.1 vegur
-      Strict-Transport-Security:
-      - max-age=2592000; includeSubDomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - cloudflare-nginx
-      Cf-Ray:
-      - 2e580e2cab835486-MAD
-    body:
-      encoding: UTF-8
-      string: '{"status_code":400,"message":"Please provide attachments for the worker
-        to compare for the task."}'
-    http_version: 
-  recorded_at: Tue, 20 Sep 2016 20:33:54 GMT
-- request:
-    method: post
-    uri: https://api.scaleapi.com/v1/task/categorize
-    body:
-      encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback&instruction=Is+this+company+public+or+private%3F&attachment_type=website&attachment=http%3A%2F%2Fwww.google.com%2F&categories[]=public&categories[]=private&allow_multiple=false
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Content-Length:
-      - '229'
-      Host:
-      - api.scaleapi.com
-      Authorization:
-      - Basic dGVzdF81YzllZDRmMzIwYWVhZjJjZjcwZjUwODZjOTdlN2Y0Mzo=
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Tue, 20 Sep 2016 20:33:58 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - __cfduid=df9390c895cc9c5676837e8e9d2f2ade81474403638; expires=Wed, 20-Sep-17
-        20:33:58 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IAZSN8dX///8HYgAGKLZiAAUBsWEBbAAAAAFtAAAABXdlYi4xaqqt+yIuhJh+sdoHTha9gP6gkSt8;
-        Version=1; Expires=Wed, 21-Sep-2016 20:33:58 GMT; Max-Age=86400; Domain=api.scaleapi.com;
-        Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
-      X-Powered-By:
-      - Express
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET,PUT,POST,DELETE
-      Access-Control-Allow-Headers:
-      - Content-Type
-      Etag:
-      - W/"182-7rfGqv70s8pufS+gO1e4WA"
-      Vary:
-      - Accept-Encoding
-      Via:
-      - 1.1 vegur
-      Strict-Transport-Security:
-      - max-age=2592000; includeSubDomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - cloudflare-nginx
-      Cf-Ray:
-      - 2e580e319b753c6b-CDG
-      Content-Encoding:
-      - gzip
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAAzTKsW7CMBAG4Fex/tkkIREIbuncvVMXdDinYOHYln1umvLy
-        lSr1m78XXBFWmW+sIIzD8XwYrodx+BgHmiY6XbrpePmEheMQ7uyet1YCCA/V
-        TH2/bVsn37zmIJ1La/+/YKF7FhAcqyyp+B9WnyIsqrK2CkKWOPu4wMLHqqW5
-        v0B4r0YfvhqX1sxxN7ndg3cmFZOL/2KVN1i0skh0Owgz77DIXHitoBd+AQAA
-        //9MkEEOwiAURO8yaxY1WCtcxRhC4bcSqRj/b7rq3Q2hi+5nJu+Nz7lsblmz
-        pG8m2MlnpsrfOIhhH2ibtdcm8VTwIj68FvrUJ05+cynzoYdzyh2GG42chLAr
-        JHZCLLDyW0lBPL9dirDoB7qYqG/G9NfY63vXhYGmoLH/AQAA//8DAGCWYbiC
-        AQAA
-    http_version: 
-  recorded_at: Tue, 20 Sep 2016 20:33:55 GMT
-- request:
-    method: post
-    uri: https://api.scaleapi.com/v1/task/categorize
-    body:
-      encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback&instruction=Test+instruction
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
-      Content-Type:
-      - application/x-www-form-urlencoded
       Content-Length:
       - '81'
-      Host:
-      - api.scaleapi.com
-      Authorization:
-      - Basic dGVzdF81YzllZDRmMzIwYWVhZjJjZjcwZjUwODZjOTdlN2Y0Mzo=
-  response:
-    status:
-      code: 400
-      message: Bad Request
-    headers:
-      Date:
-      - Tue, 20 Sep 2016 20:33:59 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '83'
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=dea75509992f47f89dadaac598c9918281474403638; expires=Wed, 20-Sep-17
-        20:33:58 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IAZPSNdT///8HYgAGKLdiAACRUmEBbAAAAAFtAAAABXdlYi4xahyLlE9YoQ3WApdZqxVOAQJr4MXP;
-        Version=1; Expires=Wed, 21-Sep-2016 20:33:59 GMT; Max-Age=86400; Domain=api.scaleapi.com;
+      - __cfduid=d7b4efe485437b2f5eefebb13e0dced391477765576; expires=Sun, 29-Oct-17
+        18:26:16 GMT; path=/; domain=.scaleapi.com; HttpOnly
+      - heroku-session-affinity=ACyDaANoA24IAbHds6////8HYgALrohiAAYCOWEBbAAAAAFtAAAABXdlYi4xakVSML/c4v0h50voHT9fDeiM2c97;
+        Version=1; Expires=Sun, 30-Oct-2016 18:26:16 GMT; Max-Age=86400; Domain=api.scaleapi.com;
         Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
+      - scaleCookie.sig=xURXFdn3awS9cRKs__bzKqfRvL4; path=/; httponly
+      - scaleCookie=eyJmbGFzaCI6W10sInBhc3Nwb3J0Ijp7fX0=; path=/; httponly
       X-Powered-By:
       - Express
       Access-Control-Allow-Origin:
-      - "*"
+      - https://docs.scaleapi.com
       Access-Control-Allow-Methods:
       - GET,PUT,POST,DELETE
       Access-Control-Allow-Headers:
       - Content-Type
+      Access-Control-Allow-Credentials:
+      - 'true'
       Etag:
-      - W/"53-khmMBM4jK5ggWU2Rp5DM/g"
+      - W/"51-mD9g78yI4aIq5q67WrSipA"
       Vary:
       - Accept-Encoding
       Via:
@@ -727,19 +309,19 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Cf-Ray:
-      - 2e580e35cbb714c7-CDG
+      - 2f98acc20ffb0de7-MAD
     body:
       encoding: UTF-8
-      string: '{"status_code":400,"message":"Please provide an attachment as a URL
-        or plaintext."}'
+      string: '{"status_code":400,"error":"Please provide an attachment as a URL or
+        plaintext."}'
     http_version: 
-  recorded_at: Tue, 20 Sep 2016 20:33:56 GMT
+  recorded_at: Sat, 29 Oct 2016 18:26:16 GMT
 - request:
     method: post
-    uri: https://api.scaleapi.com/v1/task/categorize
+    uri: https://api.scaleapi.com/v1/task/annotation
     body:
       encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback&instruction=Test+instruction
+      string: '{"callback_url":"http://www.example.com/callback"}'
     headers:
       Accept:
       - application/json
@@ -748,9 +330,9 @@ http_interactions:
       User-Agent:
       - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
       Content-Length:
-      - '81'
+      - '50'
       Host:
       - api.scaleapi.com
       Authorization:
@@ -761,31 +343,33 @@ http_interactions:
       message: Bad Request
     headers:
       Date:
-      - Tue, 20 Sep 2016 20:34:00 GMT
+      - Sat, 29 Oct 2016 18:26:16 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '83'
+      - '81'
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d6fdbce59f6495a1eba6fad95d45be71a1474403639; expires=Wed, 20-Sep-17
-        20:33:59 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IAdEwidT///8HYgAGKLhiAA1S+2EBbAAAAAFtAAAABXdlYi4xakoFKdhF4wfNDVvW4QSVZTFjXBlZ;
-        Version=1; Expires=Wed, 21-Sep-2016 20:34:00 GMT; Max-Age=86400; Domain=api.scaleapi.com;
+      - __cfduid=dfe16fa322165b937ad2b926e0fbf9c531477765576; expires=Sun, 29-Oct-17
+        18:26:16 GMT; path=/; domain=.scaleapi.com; HttpOnly
+      - heroku-session-affinity=ACyDaANoA24IATMUmK////8HYgALrohiAAw9aGEBbAAAAAFtAAAABXdlYi4xarMz8efxu5jEipXiWzgQV+7nZURf;
+        Version=1; Expires=Sun, 30-Oct-2016 18:26:16 GMT; Max-Age=86400; Domain=api.scaleapi.com;
         Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
+      - scaleCookie.sig=xURXFdn3awS9cRKs__bzKqfRvL4; path=/; httponly
+      - scaleCookie=eyJmbGFzaCI6W10sInBhc3Nwb3J0Ijp7fX0=; path=/; httponly
       X-Powered-By:
       - Express
       Access-Control-Allow-Origin:
-      - "*"
+      - https://docs.scaleapi.com
       Access-Control-Allow-Methods:
       - GET,PUT,POST,DELETE
       Access-Control-Allow-Headers:
       - Content-Type
+      Access-Control-Allow-Credentials:
+      - 'true'
       Etag:
-      - W/"53-khmMBM4jK5ggWU2Rp5DM/g"
+      - W/"51-mD9g78yI4aIq5q67WrSipA"
       Vary:
       - Accept-Encoding
       Via:
@@ -797,19 +381,704 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Cf-Ray:
-      - 2e580e3b1f153c41-CDG
+      - 2f98acc69a732fa1-MAD
     body:
       encoding: UTF-8
-      string: '{"status_code":400,"message":"Please provide an attachment as a URL
-        or plaintext."}'
+      string: '{"status_code":400,"error":"Please provide an attachment as a URL or
+        plaintext."}'
     http_version: 
-  recorded_at: Tue, 20 Sep 2016 20:33:57 GMT
+  recorded_at: Sat, 29 Oct 2016 18:26:16 GMT
+- request:
+    method: post
+    uri: https://api.scaleapi.com/v1/task/comparison
+    body:
+      encoding: UTF-8
+      string: '{"callback_url":"http://www.example.com/callback","instruction":"Do
+        the objects in these images have the same pattern?","attachment_type":"image","choices":["yes","no"],"attachments":["http://i.ebayimg.com/00/$T2eC16dHJGwFFZKjy5ZjBRfNyMC4Ig~~_32.JPG","http://images.wisegeek.com/checkered-tablecloth.jpg"]}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '306'
+      Host:
+      - api.scaleapi.com
+      Authorization:
+      - Basic dGVzdF81YzllZDRmMzIwYWVhZjJjZjcwZjUwODZjOTdlN2Y0Mzo=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 29 Oct 2016 18:26:17 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d930e4366ca0546129f1104b106318ce61477765577; expires=Sun, 29-Oct-17
+        18:26:17 GMT; path=/; domain=.scaleapi.com; HttpOnly
+      - heroku-session-affinity=ACyDaANoA24IAd83Fqz///8HYgALroliAAIVNWEBbAAAAAFtAAAABXdlYi4xaqiBQkfYZ4Hqr3/Q1LyJgJ5z/1GQ;
+        Version=1; Expires=Sun, 30-Oct-2016 18:26:17 GMT; Max-Age=86400; Domain=api.scaleapi.com;
+        Path=/; HttpOnly
+      - scaleCookie.sig=xURXFdn3awS9cRKs__bzKqfRvL4; path=/; httponly
+      - scaleCookie=eyJmbGFzaCI6W10sInBhc3Nwb3J0Ijp7fX0=; path=/; httponly
+      X-Powered-By:
+      - Express
+      Access-Control-Allow-Origin:
+      - https://docs.scaleapi.com
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Headers:
+      - Content-Type
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Etag:
+      - W/"1de-7CLCEbqIn2Osu3DUPDW0Dw"
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 vegur
+      Strict-Transport-Security:
+      - max-age=2592000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 2f98acc8abc42f8f-MAD
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA0xQ22rbQBT8FTH0cS1Lii/xvhSakrQpKaXkySWIo9WxtLa0
+        ErtHUYVxvr1ESUsfh7kwM2cYzyRc5iTQyJJ0s0iTRbZ7TK91ttHpNk5X6z0U
+        DDVNQeaUD76BRi3S6+VyHMeYf1PbNxybrl3+VUFBpp6hYbq2J29D56AQhGQI
+        0OjZldZVUBh8xc5M0ChpgoJ1QfxgxHYOGp+7SGqOuuLIRkJk3SsMHNmWKg5R
+        Tc88CwK1HPUkwt59hEJPntoAfYapO2s4QP/CxAEKrsOTAomQqVt2kr8XnSPx
+        PzOb3ofamAuabFvNM5Nk+eEx45t0U365vxtvb/ffjtN6f/z08/B9erhZfa1e
+        XvKrLL7/cQf1L2LuHI82cMV8evurZnNiz+VCqGjYNJ3U8bGv8HRRsCEXDgIt
+        fmAFoXDKbQmN9XW64p3ZFYdyW1wlmyQ5cLZNCAotC5UkBH2+XP4AAAD//wMA
+        bVsJ0N4BAAA=
+    http_version: 
+  recorded_at: Sat, 29 Oct 2016 18:26:17 GMT
+- request:
+    method: post
+    uri: https://api.scaleapi.com/v1/task/comparison
+    body:
+      encoding: UTF-8
+      string: '{"callback_url":"http://www.example.com/callback","instruction":"Test
+        instruction","choices":["a","b"]}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '103'
+      Host:
+      - api.scaleapi.com
+      Authorization:
+      - Basic dGVzdF81YzllZDRmMzIwYWVhZjJjZjcwZjUwODZjOTdlN2Y0Mzo=
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Sat, 29 Oct 2016 18:26:17 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '96'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d65131af6fc725a0c81624b301d6ebd751477765577; expires=Sun, 29-Oct-17
+        18:26:17 GMT; path=/; domain=.scaleapi.com; HttpOnly
+      - heroku-session-affinity=ACyDaANoA24IAd0bqaz///8HYgALroliAAzq+WEBbAAAAAFtAAAABXdlYi4xanrtq+FYTZYMCvG4f0CftzTMK1ZG;
+        Version=1; Expires=Sun, 30-Oct-2016 18:26:17 GMT; Max-Age=86400; Domain=api.scaleapi.com;
+        Path=/; HttpOnly
+      - scaleCookie.sig=xURXFdn3awS9cRKs__bzKqfRvL4; path=/; httponly
+      - scaleCookie=eyJmbGFzaCI6W10sInBhc3Nwb3J0Ijp7fX0=; path=/; httponly
+      X-Powered-By:
+      - Express
+      Access-Control-Allow-Origin:
+      - https://docs.scaleapi.com
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Headers:
+      - Content-Type
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Etag:
+      - W/"60-F2SZWzJSI2PY5Xb1B39Hhw"
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 vegur
+      Strict-Transport-Security:
+      - max-age=2592000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 2f98accad9442f59-MAD
+    body:
+      encoding: UTF-8
+      string: '{"status_code":400,"error":"Please provide attachments for the worker
+        to compare for the task."}'
+    http_version: 
+  recorded_at: Sat, 29 Oct 2016 18:26:17 GMT
+- request:
+    method: post
+    uri: https://api.scaleapi.com/v1/task/comparison
+    body:
+      encoding: UTF-8
+      string: '{"callback_url":"http://www.example.com/callback","instruction":"Test
+        instruction","choices":["a","b"]}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '103'
+      Host:
+      - api.scaleapi.com
+      Authorization:
+      - Basic dGVzdF81YzllZDRmMzIwYWVhZjJjZjcwZjUwODZjOTdlN2Y0Mzo=
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Sat, 29 Oct 2016 18:26:18 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '96'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=de6a89cdbeb4fd1130bcfee53b166527c1477765578; expires=Sun, 29-Oct-17
+        18:26:18 GMT; path=/; domain=.scaleapi.com; HttpOnly
+      - heroku-session-affinity=ACyDaANoA24IAfSmLq////8HYgALropiAALodmEBbAAAAAFtAAAABXdlYi4xaj/bDLJXudUguPxB1QoXeYYvXPFI;
+        Version=1; Expires=Sun, 30-Oct-2016 18:26:18 GMT; Max-Age=86400; Domain=api.scaleapi.com;
+        Path=/; HttpOnly
+      - scaleCookie.sig=xURXFdn3awS9cRKs__bzKqfRvL4; path=/; httponly
+      - scaleCookie=eyJmbGFzaCI6W10sInBhc3Nwb3J0Ijp7fX0=; path=/; httponly
+      X-Powered-By:
+      - Express
+      Access-Control-Allow-Origin:
+      - https://docs.scaleapi.com
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Headers:
+      - Content-Type
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Etag:
+      - W/"60-F2SZWzJSI2PY5Xb1B39Hhw"
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 vegur
+      Strict-Transport-Security:
+      - max-age=2592000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 2f98accf5d9b0de1-MAD
+    body:
+      encoding: UTF-8
+      string: '{"status_code":400,"error":"Please provide attachments for the worker
+        to compare for the task."}'
+    http_version: 
+  recorded_at: Sat, 29 Oct 2016 18:26:18 GMT
+- request:
+    method: post
+    uri: https://api.scaleapi.com/v1/task/categorize
+    body:
+      encoding: UTF-8
+      string: '{"callback_url":"http://www.example.com/callback","instruction":"Is
+        this company public or private?","attachment_type":"website","attachment":"http://www.google.com/","categories":["public","private"],"allow_multiple":false}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '224'
+      Host:
+      - api.scaleapi.com
+      Authorization:
+      - Basic dGVzdF81YzllZDRmMzIwYWVhZjJjZjcwZjUwODZjOTdlN2Y0Mzo=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 29 Oct 2016 18:26:18 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d2c2d7541578ad7d494a8eb35744b64d61477765578; expires=Sun, 29-Oct-17
+        18:26:18 GMT; path=/; domain=.scaleapi.com; HttpOnly
+      - heroku-session-affinity=ACyDaANoA24IAdmEUa////8HYgALropiAAz0YWEBbAAAAAFtAAAABXdlYi4xalDajMA0dw8fH5JarF4LT9Qr4+WG;
+        Version=1; Expires=Sun, 30-Oct-2016 18:26:18 GMT; Max-Age=86400; Domain=api.scaleapi.com;
+        Path=/; HttpOnly
+      - scaleCookie.sig=xURXFdn3awS9cRKs__bzKqfRvL4; path=/; httponly
+      - scaleCookie=eyJmbGFzaCI6W10sInBhc3Nwb3J0Ijp7fX0=; path=/; httponly
+      X-Powered-By:
+      - Express
+      Access-Control-Allow-Origin:
+      - https://docs.scaleapi.com
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Headers:
+      - Content-Type
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Etag:
+      - W/"190-MbWzHs9kQpxO0FOW93G4ew"
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 vegur
+      Strict-Transport-Security:
+      - max-age=2592000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 2f98acd18cf70db7-MAD
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA1SPwU7DMBAFfyV6Z7dNAm1TXzhz5wRC0cbZJlad2LI3hFD1
+        3xG0ILjPG705w0Qm4bYmgUaZF7tVka/Kw1NR6XKni2pdbatnKBhyriFzqqfo
+        oNGLBL3ZzPO85ncaguO18cPmh4KCLIGhYUi489F+kFg/QiEJyZSgEXhs7dhB
+        wY5J4mS+AY3HlElvU2b8EGhcsjA1zprMxyxE+0bCD1CYYsejWaDR0gKFQJGG
+        BH0GOefnepic2OAY+kgusfr9wQn6BVfn1+6qxKsCiZDpBx7lf1/nfXfLw1+q
+        vhXO3CQrjIuCTbVwEmiJEysIpVNtW2hsq+KeD4aaY7tv7vJdnh+53OcNFAYW
+        akkI+ny5fAIAAP//AwBqB1VukAEAAA==
+    http_version: 
+  recorded_at: Sat, 29 Oct 2016 18:26:19 GMT
+- request:
+    method: post
+    uri: https://api.scaleapi.com/v1/task/categorize
+    body:
+      encoding: UTF-8
+      string: '{"callback_url":"http://www.example.com/callback","instruction":"Test
+        instruction"}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '83'
+      Host:
+      - api.scaleapi.com
+      Authorization:
+      - Basic dGVzdF81YzllZDRmMzIwYWVhZjJjZjcwZjUwODZjOTdlN2Y0Mzo=
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Sat, 29 Oct 2016 18:26:19 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '81'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d957bfad2025596e4aded40d943348bdf1477765579; expires=Sun, 29-Oct-17
+        18:26:19 GMT; path=/; domain=.scaleapi.com; HttpOnly
+      - heroku-session-affinity=ACyDaANoA24IARnkk67///8HYgALrotiAAOaCmEBbAAAAAFtAAAABXdlYi4xaitCEkxYd0oR2wS/r+nFGRNG+GKx;
+        Version=1; Expires=Sun, 30-Oct-2016 18:26:19 GMT; Max-Age=86400; Domain=api.scaleapi.com;
+        Path=/; HttpOnly
+      - scaleCookie.sig=xURXFdn3awS9cRKs__bzKqfRvL4; path=/; httponly
+      - scaleCookie=eyJmbGFzaCI6W10sInBhc3Nwb3J0Ijp7fX0=; path=/; httponly
+      X-Powered-By:
+      - Express
+      Access-Control-Allow-Origin:
+      - https://docs.scaleapi.com
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Headers:
+      - Content-Type
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Etag:
+      - W/"51-mD9g78yI4aIq5q67WrSipA"
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 vegur
+      Strict-Transport-Security:
+      - max-age=2592000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 2f98acd5cba95474-MAD
+    body:
+      encoding: UTF-8
+      string: '{"status_code":400,"error":"Please provide an attachment as a URL or
+        plaintext."}'
+    http_version: 
+  recorded_at: Sat, 29 Oct 2016 18:26:19 GMT
+- request:
+    method: post
+    uri: https://api.scaleapi.com/v1/task/categorize
+    body:
+      encoding: UTF-8
+      string: '{"callback_url":"http://www.example.com/callback","instruction":"Test
+        instruction"}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '83'
+      Host:
+      - api.scaleapi.com
+      Authorization:
+      - Basic dGVzdF81YzllZDRmMzIwYWVhZjJjZjcwZjUwODZjOTdlN2Y0Mzo=
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Sat, 29 Oct 2016 18:26:19 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '81'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d4ab67c119d7bdf252ff9eb8bcddcce631477765579; expires=Sun, 29-Oct-17
+        18:26:19 GMT; path=/; domain=.scaleapi.com; HttpOnly
+      - heroku-session-affinity=ACyDaANoA24IARvsna7///8HYgALrotiAA12cGEBbAAAAAFtAAAABXdlYi4xatmqP8QC0RQVelcskjt3vlmdYFqP;
+        Version=1; Expires=Sun, 30-Oct-2016 18:26:19 GMT; Max-Age=86400; Domain=api.scaleapi.com;
+        Path=/; HttpOnly
+      - scaleCookie.sig=xURXFdn3awS9cRKs__bzKqfRvL4; path=/; httponly
+      - scaleCookie=eyJmbGFzaCI6W10sInBhc3Nwb3J0Ijp7fX0=; path=/; httponly
+      X-Powered-By:
+      - Express
+      Access-Control-Allow-Origin:
+      - https://docs.scaleapi.com
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Headers:
+      - Content-Type
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Etag:
+      - W/"51-mD9g78yI4aIq5q67WrSipA"
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 vegur
+      Strict-Transport-Security:
+      - max-age=2592000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 2f98acd7c9fb54b6-MAD
+    body:
+      encoding: UTF-8
+      string: '{"status_code":400,"error":"Please provide an attachment as a URL or
+        plaintext."}'
+    http_version: 
+  recorded_at: Sat, 29 Oct 2016 18:26:20 GMT
+- request:
+    method: post
+    uri: https://api.scaleapi.com/v1/task/datacollection
+    body:
+      encoding: UTF-8
+      string: '{"callback_url":"http://www.example.com/callback","instruction":"Find
+        the URL for the hiring page for the company with attached website.","attachment_type":"website","attachment":"https://www.scaleapi.com/","fields":{"hiring_page":"Hiring
+        Page URL"}}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '250'
+      Host:
+      - api.scaleapi.com
+      Authorization:
+      - Basic dGVzdF81YzllZDRmMzIwYWVhZjJjZjcwZjUwODZjOTdlN2Y0Mzo=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 29 Oct 2016 18:26:20 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d322b931c154015acfe5d906f530217341477765580; expires=Sun, 29-Oct-17
+        18:26:20 GMT; path=/; domain=.scaleapi.com; HttpOnly
+      - heroku-session-affinity=ACyDaANoA24IAX60Sqv///8HYgALroxiAASyrGEBbAAAAAFtAAAABXdlYi4xalUYozzgRrf+/xItaKD6bYjmW21L;
+        Version=1; Expires=Sun, 30-Oct-2016 18:26:20 GMT; Max-Age=86400; Domain=api.scaleapi.com;
+        Path=/; HttpOnly
+      - scaleCookie.sig=xURXFdn3awS9cRKs__bzKqfRvL4; path=/; httponly
+      - scaleCookie=eyJmbGFzaCI6W10sInBhc3Nwb3J0Ijp7fX0=; path=/; httponly
+      X-Powered-By:
+      - Express
+      Access-Control-Allow-Origin:
+      - https://docs.scaleapi.com
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Headers:
+      - Content-Type
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Etag:
+      - W/"1aa-LU3RLfGR7FwmqM6TAzYtIQ"
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 vegur
+      Strict-Transport-Security:
+      - max-age=2592000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 2f98acdc7db55474-MAD
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA0yQsW6DQBBEfwVNfcZAEhzfB0QpXERW3KRBy7HAyXAgbhFB
+        lv89MpAo3Wg1mpm3N5iBSbjISKCRRHG6i6NdcvyMX3WS6iQKk2P6BQVDTZOT
+        uWbj0ECjFun1fj9NU8jf1PYNh6Zr978uKMjcMzQKEjJd07AR2zkoeCEZPTR6
+        doV1FRSs8zKMq0HjzboikJqDy/kUlN2w6NoO1lVBTxX/3UzX9uTmYLJSByRC
+        puYimDj3VjiEwjhU7My8rJih0NNArYe+obTcFItag7NHMDTe15qPR83lfMJd
+        YQ1u2cmG7Tdub6hh6u0Cjv/GbGPfpjxSrM+EvUDLMLKCkL9mtoDGy2v8zEdj
+        8rI45E9RGkUlJ4fIQKFlocf7oG/3+w8AAAD//wMAhoiygKoBAAA=
+    http_version: 
+  recorded_at: Sat, 29 Oct 2016 18:26:20 GMT
+- request:
+    method: post
+    uri: https://api.scaleapi.com/v1/task/datacollection
+    body:
+      encoding: UTF-8
+      string: '{"callback_url":"http://www.example.com/callback","instruction":"Test
+        instruction","fields":{"hiring_page":"Hiring Page URL"}}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '126'
+      Host:
+      - api.scaleapi.com
+      Authorization:
+      - Basic dGVzdF81YzllZDRmMzIwYWVhZjJjZjcwZjUwODZjOTdlN2Y0Mzo=
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Sat, 29 Oct 2016 18:26:20 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '96'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d489ca97e33e2396cae8167da69b121261477765580; expires=Sun, 29-Oct-17
+        18:26:20 GMT; path=/; domain=.scaleapi.com; HttpOnly
+      - heroku-session-affinity=ACyDaANoA24IAdCfS6////8HYgALroxiAAnjF2EBbAAAAAFtAAAABXdlYi4xaoqT3JDpUqoPfuB+2T863k6lQ1zl;
+        Version=1; Expires=Sun, 30-Oct-2016 18:26:20 GMT; Max-Age=86400; Domain=api.scaleapi.com;
+        Path=/; HttpOnly
+      - scaleCookie.sig=xURXFdn3awS9cRKs__bzKqfRvL4; path=/; httponly
+      - scaleCookie=eyJmbGFzaCI6W10sInBhc3Nwb3J0Ijp7fX0=; path=/; httponly
+      X-Powered-By:
+      - Express
+      Access-Control-Allow-Origin:
+      - https://docs.scaleapi.com
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Headers:
+      - Content-Type
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Etag:
+      - W/"60-Bceg3ZwfPsxoZuGdEZAUVQ"
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 vegur
+      Strict-Transport-Security:
+      - max-age=2592000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 2f98acdeac8c0ded-MAD
+    body:
+      encoding: UTF-8
+      string: '{"status_code":400,"error":"Invalid attachment_type - please choose
+        one of these: text website"}'
+    http_version: 
+  recorded_at: Sat, 29 Oct 2016 18:26:20 GMT
+- request:
+    method: post
+    uri: https://api.scaleapi.com/v1/task/datacollection
+    body:
+      encoding: UTF-8
+      string: '{"callback_url":"http://www.example.com/callback","instruction":"Test
+        instruction","fields":{"hiring_page":"Hiring Page URL"}}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '126'
+      Host:
+      - api.scaleapi.com
+      Authorization:
+      - Basic dGVzdF81YzllZDRmMzIwYWVhZjJjZjcwZjUwODZjOTdlN2Y0Mzo=
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Sat, 29 Oct 2016 18:26:21 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '96'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d76653060ef18555ff2ff61a6c2628ee51477765580; expires=Sun, 29-Oct-17
+        18:26:20 GMT; path=/; domain=.scaleapi.com; HttpOnly
+      - heroku-session-affinity=ACyDaANoA24IAV4YB6z///8HYgALro1iAAQd2GEBbAAAAAFtAAAABXdlYi4xai0D+LQNgI8lIP0OklmYId7gG+1f;
+        Version=1; Expires=Sun, 30-Oct-2016 18:26:21 GMT; Max-Age=86400; Domain=api.scaleapi.com;
+        Path=/; HttpOnly
+      - scaleCookie.sig=xURXFdn3awS9cRKs__bzKqfRvL4; path=/; httponly
+      - scaleCookie=eyJmbGFzaCI6W10sInBhc3Nwb3J0Ijp7fX0=; path=/; httponly
+      X-Powered-By:
+      - Express
+      Access-Control-Allow-Origin:
+      - https://docs.scaleapi.com
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Headers:
+      - Content-Type
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Etag:
+      - W/"60-Bceg3ZwfPsxoZuGdEZAUVQ"
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 vegur
+      Strict-Transport-Security:
+      - max-age=2592000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 2f98ace0aa6f2f8f-MAD
+    body:
+      encoding: UTF-8
+      string: '{"status_code":400,"error":"Invalid attachment_type - please choose
+        one of these: text website"}'
+    http_version: 
+  recorded_at: Sat, 29 Oct 2016 18:26:21 GMT
 - request:
     method: post
     uri: https://api.scaleapi.com/v1/task/phonecall
     body:
       encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback&instruction=Test+instruction&phone_number=5055006865
+      string: '{"callback_url":"http://www.example.com/callback","instruction":"Test
+        instruction","phone_number":"5055006865"}'
     headers:
       Accept:
       - application/json
@@ -818,9 +1087,9 @@ http_interactions:
       User-Agent:
       - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
       Content-Length:
-      - '105'
+      - '111'
       Host:
       - api.scaleapi.com
       Authorization:
@@ -831,31 +1100,33 @@ http_interactions:
       message: Bad Request
     headers:
       Date:
-      - Tue, 20 Sep 2016 20:34:01 GMT
+      - Sat, 29 Oct 2016 18:26:21 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '139'
+      - '137'
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d631b24c6d307983b11ef716aa9f6ab591474403641; expires=Wed, 20-Sep-17
-        20:34:01 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IATbwaNX///8HYgAGKLliAAojumEBbAAAAAFtAAAABXdlYi4xanU7phq0Sa+s89lA1M1JwgqTjQJm;
-        Version=1; Expires=Wed, 21-Sep-2016 20:34:01 GMT; Max-Age=86400; Domain=api.scaleapi.com;
+      - __cfduid=d9ccdfaaa6b54eabf5e2c874a435c01081477765581; expires=Sun, 29-Oct-17
+        18:26:21 GMT; path=/; domain=.scaleapi.com; HttpOnly
+      - heroku-session-affinity=ACyDaANoA24IAZDX/6////8HYgALro1iAAsTOmEBbAAAAAFtAAAABXdlYi4xak0fJLqjVTQ8aKnwUG4T1B5Fc4Cl;
+        Version=1; Expires=Sun, 30-Oct-2016 18:26:21 GMT; Max-Age=86400; Domain=api.scaleapi.com;
         Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
+      - scaleCookie.sig=xURXFdn3awS9cRKs__bzKqfRvL4; path=/; httponly
+      - scaleCookie=eyJmbGFzaCI6W10sInBhc3Nwb3J0Ijp7fX0=; path=/; httponly
       X-Powered-By:
       - Express
       Access-Control-Allow-Origin:
-      - "*"
+      - https://docs.scaleapi.com
       Access-Control-Allow-Methods:
       - GET,PUT,POST,DELETE
       Access-Control-Allow-Headers:
       - Content-Type
+      Access-Control-Allow-Credentials:
+      - 'true'
       Etag:
-      - W/"8b-zQ6NnbRJTI0Jh3djmaV6PA"
+      - W/"89-2TxzEglRZ3EK5fQocwrCXg"
       Vary:
       - Accept-Encoding
       Via:
@@ -867,19 +1138,20 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Cf-Ray:
-      - 2e580e464b97151b-CDG
+      - 2f98ace53caf54a4-MAD
     body:
       encoding: UTF-8
-      string: '{"status_code":400,"message":"Please provide an entity name (name,
-        business name, etc.) corresponding to the phone number for the worker."}'
+      string: '{"status_code":400,"error":"Please provide an entity name (name, business
+        name, etc.) corresponding to the phone number for the worker."}'
     http_version: 
-  recorded_at: Tue, 20 Sep 2016 20:33:58 GMT
+  recorded_at: Sat, 29 Oct 2016 18:26:21 GMT
 - request:
     method: post
     uri: https://api.scaleapi.com/v1/task/phonecall
     body:
       encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback&instruction=Test+instruction&phone_number=5055006865
+      string: '{"callback_url":"http://www.example.com/callback","instruction":"Test
+        instruction","phone_number":"5055006865"}'
     headers:
       Accept:
       - application/json
@@ -888,9 +1160,9 @@ http_interactions:
       User-Agent:
       - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
       Content-Length:
-      - '105'
+      - '111'
       Host:
       - api.scaleapi.com
       Authorization:
@@ -901,31 +1173,33 @@ http_interactions:
       message: Bad Request
     headers:
       Date:
-      - Tue, 20 Sep 2016 20:34:02 GMT
+      - Sat, 29 Oct 2016 18:26:22 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '139'
+      - '137'
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d292e3839d340be28c28dcd91ed81695e1474403641; expires=Wed, 20-Sep-17
-        20:34:01 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IAZSqhtX///8HYgAGKLpiAAVowGEBbAAAAAFtAAAABXdlYi4xar54AB4YQDHgssd1h+5atSirXfRT;
-        Version=1; Expires=Wed, 21-Sep-2016 20:34:02 GMT; Max-Age=86400; Domain=api.scaleapi.com;
+      - __cfduid=da6b553d1e543d7dbb40b18f96085c0621477765581; expires=Sun, 29-Oct-17
+        18:26:21 GMT; path=/; domain=.scaleapi.com; HttpOnly
+      - heroku-session-affinity=ACyDaANoA24IAVQNOrD///8HYgALro5iAAYp2GEBbAAAAAFtAAAABXdlYi4xatwjq369h4IT8luZHvd61ay38YXg;
+        Version=1; Expires=Sun, 30-Oct-2016 18:26:22 GMT; Max-Age=86400; Domain=api.scaleapi.com;
         Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
+      - scaleCookie.sig=xURXFdn3awS9cRKs__bzKqfRvL4; path=/; httponly
+      - scaleCookie=eyJmbGFzaCI6W10sInBhc3Nwb3J0Ijp7fX0=; path=/; httponly
       X-Powered-By:
       - Express
       Access-Control-Allow-Origin:
-      - "*"
+      - https://docs.scaleapi.com
       Access-Control-Allow-Methods:
       - GET,PUT,POST,DELETE
       Access-Control-Allow-Headers:
       - Content-Type
+      Access-Control-Allow-Credentials:
+      - 'true'
       Etag:
-      - W/"8b-zQ6NnbRJTI0Jh3djmaV6PA"
+      - W/"89-2TxzEglRZ3EK5fQocwrCXg"
       Vary:
       - Accept-Encoding
       Via:
@@ -937,19 +1211,23 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Cf-Ray:
-      - 2e580e4a3f962f89-MAD
+      - 2f98ace74ca22f8f-MAD
     body:
       encoding: UTF-8
-      string: '{"status_code":400,"message":"Please provide an entity name (name,
-        business name, etc.) corresponding to the phone number for the worker."}'
+      string: '{"status_code":400,"error":"Please provide an entity name (name, business
+        name, etc.) corresponding to the phone number for the worker."}'
     http_version: 
-  recorded_at: Tue, 20 Sep 2016 20:33:59 GMT
+  recorded_at: Sat, 29 Oct 2016 18:26:22 GMT
 - request:
     method: post
     uri: https://api.scaleapi.com/v1/task/transcription
     body:
       encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback&instruction=Transcribe+the+given+fields.+Then+for+each+news+item+on+the+page%2C+transcribe+the+information+for+the+row.&attachment_type=website&attachment=http%3A%2F%2Fwww.google.com%2F&fields[title]=Title+of+Webpage&fields[top_result]=Title+of+the+top+result&row_fields[username]=Username+of+submitter&row_fields[comment_count]=Number+of+comments
+      string: '{"callback_url":"http://www.example.com/callback","instruction":"Transcribe
+        the given fields. Then for each news item on the page, transcribe the information
+        for the row.","attachment_type":"website","attachment":"http://www.google.com/","fields":{"title":"Title
+        of Webpage","top_result":"Title of the top result"},"row_fields":{"username":"Username
+        of submitter","comment_count":"Number of comments"}}'
     headers:
       Accept:
       - application/json
@@ -958,9 +1236,9 @@ http_interactions:
       User-Agent:
       - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
       Content-Length:
-      - '400'
+      - '402'
       Host:
       - api.scaleapi.com
       Authorization:
@@ -971,7 +1249,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 20 Sep 2016 20:34:03 GMT
+      - Sat, 29 Oct 2016 18:26:23 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -979,23 +1257,25 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d49468a562bcb198eb10ea912a30d4cb71474403642; expires=Wed, 20-Sep-17
-        20:34:02 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IAfCdPNb///8HYgAGKLtiAADDWGEBbAAAAAFtAAAABXdlYi4xaqqWnESqUeMQzlCQpOtrJquXVQn2;
-        Version=1; Expires=Wed, 21-Sep-2016 20:34:03 GMT; Max-Age=86400; Domain=api.scaleapi.com;
+      - __cfduid=d7a5e5d9ce3556bdba7fa3fc7f2073b911477765582; expires=Sun, 29-Oct-17
+        18:26:22 GMT; path=/; domain=.scaleapi.com; HttpOnly
+      - heroku-session-affinity=ACyDaANoA24IAdJr+K////8HYgALro9iAAGrRmEBbAAAAAFtAAAABXdlYi4xanVXGQE5c2XsjFVXawFWp6vSCJXL;
+        Version=1; Expires=Sun, 30-Oct-2016 18:26:23 GMT; Max-Age=86400; Domain=api.scaleapi.com;
         Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
+      - scaleCookie.sig=xURXFdn3awS9cRKs__bzKqfRvL4; path=/; httponly
+      - scaleCookie=eyJmbGFzaCI6W10sInBhc3Nwb3J0Ijp7fX0=; path=/; httponly
       X-Powered-By:
       - Express
       Access-Control-Allow-Origin:
-      - "*"
+      - https://docs.scaleapi.com
       Access-Control-Allow-Methods:
       - GET,PUT,POST,DELETE
       Access-Control-Allow-Headers:
       - Content-Type
+      Access-Control-Allow-Credentials:
+      - 'true'
       Etag:
-      - W/"233-Fqr7mJZxrb6NsbSbLRglKw"
+      - W/"241-NVsL5Fe8EKFBO7XX5wRTnQ"
       Vary:
       - Accept-Encoding
       Via:
@@ -1007,29 +1287,30 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Cf-Ray:
-      - 2e580e4ebc2a548c-MAD
+      - 2f98acebcc122f2f-MAD
       Content-Encoding:
       - gzip
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAA1SR207kMAyGXyX6r0OnzAGYPARXg1bipkpTTxvRHJQ4W0aI
-        d1+lWwTcxfHnz3H8AZNIMw2dZijs2/uHu/Z8t28v+1Ydjqo9NO1p/woJo+e5
-        1+atK2mGwsQc1W63LEtD79rFmRoT3O6LggTfIkGBk/bZJBvZBg+JzJpLhkIk
-        P1g/QsL6zKmYFVC4bAU9CZ5IjPYveXG1NA+5EZepBiEJ0mYSnpYsLJMTwa9w
-        1CNJwb8N1l9Dcrrq19J6l8LSQKKkkby5QWHQN0hEnbTLUB9IYen+N62RCc6R
-        586E4us/PRfXUxLhKrZMrrJMyWtXh37ZjpXIpXeWmRI+Jb6VHGKXKJe5+i6W
-        5xWub+MQxZaR4Jr5Sfyhvk5ZZZpZm6m2/72QMYRx2wd+Ut22koX6bHlV2Nwx
-        ZYbiVEiCdX7r7ACF0yPdn4dDfz6fjsPp8NS25pGu5ojPfwAAAP//AwD9KRL9
-        MwIAAA==
+        H4sIAAAAAAAAA1SRwW7bMAyGX0X4z2riuG3a6iF6yjCgF4OWaVuoJRkSPS8I
+        8u6DPA9rb6L48aMo3mATk3DXkMCgrk7nh1P1UL9dTq+mPpv68XCqnz+gYWma
+        WrKfzZImGIwiszke13U98G/y88QHG/3xHwUNuc4MA0kUsk1uFhcDNLKQLBkG
+        M4fOhQEaLmRJi90Ag8te0LKSkdXgfnFQveOpywd1GUsQk2Kyowq8ZuWEvYph
+        g2caWCv5bnChj8lT0W+l5S7F9QCNJQ0c7BUGHV2hMVMin2FuSHFt/jYtkY3e
+        c5DGxiWUf3pffMtJxV7tmVxkmVMgX4b+sR8LkZfWOxFOuGv8V0qcm8R5mYrv
+        4mTa4PI2ibPaMxpSMl+Jn9yWKYuMRMiOpf33hQwxDvs+8JVq9pWs3GYnm8Ll
+        RjgLjKSFNYTyZ+M6GDy/np74zfZt3720j9W5qnquX6oOGp6FOhKCud3vfwAA
+        AP//AwDaBU+PQQIAAA==
     http_version: 
-  recorded_at: Tue, 20 Sep 2016 20:34:00 GMT
+  recorded_at: Sat, 29 Oct 2016 18:26:23 GMT
 - request:
     method: post
     uri: https://api.scaleapi.com/v1/task/transcription
     body:
       encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback&instruction=Test+instruction&attachment_type=website
+      string: '{"callback_url":"http://www.example.com/callback","instruction":"Test
+        instruction","attachment_type":"website"}'
     headers:
       Accept:
       - application/json
@@ -1038,9 +1319,9 @@ http_interactions:
       User-Agent:
       - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
       Content-Length:
-      - '105'
+      - '111'
       Host:
       - api.scaleapi.com
       Authorization:
@@ -1051,31 +1332,33 @@ http_interactions:
       message: Bad Request
     headers:
       Date:
-      - Tue, 20 Sep 2016 20:34:03 GMT
+      - Sat, 29 Oct 2016 18:26:23 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '83'
+      - '81'
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=daf329f1405a59d79f4ae45114c03af6d1474403643; expires=Wed, 20-Sep-17
-        20:34:03 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IAbDINdb///8HYgAGKLtiAAtXSGEBbAAAAAFtAAAABXdlYi4xahxhyuN+iSzsh+O+yN1g7y5ThTJh;
-        Version=1; Expires=Wed, 21-Sep-2016 20:34:03 GMT; Max-Age=86400; Domain=api.scaleapi.com;
+      - __cfduid=dc43084b2a299c294d09862378a238e901477765583; expires=Sun, 29-Oct-17
+        18:26:23 GMT; path=/; domain=.scaleapi.com; HttpOnly
+      - heroku-session-affinity=ACyDaANoA24IAdkTfa7///8HYgALro9iAAxqYWEBbAAAAAFtAAAABXdlYi4xaj3PbUXqFHFPADAE+yDzKWq5ZYHc;
+        Version=1; Expires=Sun, 30-Oct-2016 18:26:23 GMT; Max-Age=86400; Domain=api.scaleapi.com;
         Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
+      - scaleCookie.sig=xURXFdn3awS9cRKs__bzKqfRvL4; path=/; httponly
+      - scaleCookie=eyJmbGFzaCI6W10sInBhc3Nwb3J0Ijp7fX0=; path=/; httponly
       X-Powered-By:
       - Express
       Access-Control-Allow-Origin:
-      - "*"
+      - https://docs.scaleapi.com
       Access-Control-Allow-Methods:
       - GET,PUT,POST,DELETE
       Access-Control-Allow-Headers:
       - Content-Type
+      Access-Control-Allow-Credentials:
+      - 'true'
       Etag:
-      - W/"53-khmMBM4jK5ggWU2Rp5DM/g"
+      - W/"51-mD9g78yI4aIq5q67WrSipA"
       Vary:
       - Accept-Encoding
       Via:
@@ -1087,19 +1370,20 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Cf-Ray:
-      - 2e580e533b2a3c29-CDG
+      - 2f98acf0abbd2f35-MAD
     body:
       encoding: UTF-8
-      string: '{"status_code":400,"message":"Please provide an attachment as a URL
-        or plaintext."}'
+      string: '{"status_code":400,"error":"Please provide an attachment as a URL or
+        plaintext."}'
     http_version: 
-  recorded_at: Tue, 20 Sep 2016 20:34:00 GMT
+  recorded_at: Sat, 29 Oct 2016 18:26:23 GMT
 - request:
     method: post
     uri: https://api.scaleapi.com/v1/task/transcription
     body:
       encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback&instruction=Test+instruction&attachment_type=website
+      string: '{"callback_url":"http://www.example.com/callback","instruction":"Test
+        instruction","attachment_type":"website"}'
     headers:
       Accept:
       - application/json
@@ -1108,9 +1392,9 @@ http_interactions:
       User-Agent:
       - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
       Content-Length:
-      - '105'
+      - '111'
       Host:
       - api.scaleapi.com
       Authorization:
@@ -1121,31 +1405,33 @@ http_interactions:
       message: Bad Request
     headers:
       Date:
-      - Tue, 20 Sep 2016 20:34:04 GMT
+      - Sat, 29 Oct 2016 18:26:24 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '83'
+      - '81'
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d67d57506aecd7872ca5998dba74b4f451474403644; expires=Wed, 20-Sep-17
-        20:34:04 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IAZEr59b///8HYgAGKLxiAAcdKWEBbAAAAAFtAAAABXdlYi4xahtd5KW0atQe1zM9QhgKyzxLT/+s;
-        Version=1; Expires=Wed, 21-Sep-2016 20:34:04 GMT; Max-Age=86400; Domain=api.scaleapi.com;
+      - __cfduid=dcbf356f1e446427944dfeb653d6dfd2b1477765584; expires=Sun, 29-Oct-17
+        18:26:24 GMT; path=/; domain=.scaleapi.com; HttpOnly
+      - heroku-session-affinity=ACyDaANoA24IAT6cSqv///8HYgALrpBiAAI/KGEBbAAAAAFtAAAABXdlYi4xaoW1vMfhJjykzoKl9DU7u9HyoQrj;
+        Version=1; Expires=Sun, 30-Oct-2016 18:26:24 GMT; Max-Age=86400; Domain=api.scaleapi.com;
         Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
+      - scaleCookie.sig=xURXFdn3awS9cRKs__bzKqfRvL4; path=/; httponly
+      - scaleCookie=eyJmbGFzaCI6W10sInBhc3Nwb3J0Ijp7fX0=; path=/; httponly
       X-Powered-By:
       - Express
       Access-Control-Allow-Origin:
-      - "*"
+      - https://docs.scaleapi.com
       Access-Control-Allow-Methods:
       - GET,PUT,POST,DELETE
       Access-Control-Allow-Headers:
       - Content-Type
+      Access-Control-Allow-Credentials:
+      - 'true'
       Etag:
-      - W/"53-khmMBM4jK5ggWU2Rp5DM/g"
+      - W/"51-mD9g78yI4aIq5q67WrSipA"
       Vary:
       - Accept-Encoding
       Via:
@@ -1157,19 +1443,19 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Cf-Ray:
-      - 2e580e57a8fb3c23-CDG
+      - 2f98acf47c725474-MAD
     body:
       encoding: UTF-8
-      string: '{"status_code":400,"message":"Please provide an attachment as a URL
-        or plaintext."}'
+      string: '{"status_code":400,"error":"Please provide an attachment as a URL or
+        plaintext."}'
     http_version: 
-  recorded_at: Tue, 20 Sep 2016 20:34:01 GMT
+  recorded_at: Sat, 29 Oct 2016 18:26:24 GMT
 - request:
     method: get
     uri: https://api.scaleapi.com/v1/tasks
     body:
       encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback
+      string: '{"callback_url":"http://www.example.com/callback"}'
     headers:
       Accept:
       - application/json
@@ -1178,9 +1464,9 @@ http_interactions:
       User-Agent:
       - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
       Content-Length:
-      - '52'
+      - '50'
       Host:
       - api.scaleapi.com
       Authorization:
@@ -1191,7 +1477,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 20 Sep 2016 20:34:07 GMT
+      - Sat, 29 Oct 2016 18:26:24 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -1199,23 +1485,25 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=dbc486858179b67f1ccdcdc3e67084f801474403644; expires=Wed, 20-Sep-17
-        20:34:04 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IAdmhetX///8HYgAGKL9iAAahP2EBbAAAAAFtAAAABXdlYi4xapKUHmUTf7tkggHZVN3z4Y4IPCcX;
-        Version=1; Expires=Wed, 21-Sep-2016 20:34:07 GMT; Max-Age=86400; Domain=api.scaleapi.com;
+      - __cfduid=d01bb48b2488c34f7627c8fa31772870d1477765584; expires=Sun, 29-Oct-17
+        18:26:24 GMT; path=/; domain=.scaleapi.com; HttpOnly
+      - heroku-session-affinity=ACyDaANoA24IAZCZN6////8HYgALrpBiAAgmjmEBbAAAAAFtAAAABXdlYi4xaiygP5jitrhm5eEfCvsGHWXLwMmp;
+        Version=1; Expires=Sun, 30-Oct-2016 18:26:24 GMT; Max-Age=86400; Domain=api.scaleapi.com;
         Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
+      - scaleCookie.sig=xURXFdn3awS9cRKs__bzKqfRvL4; path=/; httponly
+      - scaleCookie=eyJmbGFzaCI6W10sInBhc3Nwb3J0Ijp7fX0=; path=/; httponly
       X-Powered-By:
       - Express
       Access-Control-Allow-Origin:
-      - "*"
+      - https://docs.scaleapi.com
       Access-Control-Allow-Methods:
       - GET,PUT,POST,DELETE
       Access-Control-Allow-Headers:
       - Content-Type
+      Access-Control-Allow-Credentials:
+      - 'true'
       Etag:
-      - W/"6528-AivOj4wsKaHyWANB9gVelA"
+      - W/"eea9-Qf7YmQHCk7Oa8qEsVX6Uqw"
       Vary:
       - Accept-Encoding
       Content-Encoding:
@@ -1229,71 +1517,109 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Cf-Ray:
-      - 2e580e5c5e7c3bdb-CDG
+      - 2f98acf6ce682f5f-MAD
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        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
-        J695dTk52I/Xsh8DbvsTMr/LLyhlAAA=
+        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
     http_version: 
-  recorded_at: Tue, 20 Sep 2016 20:34:04 GMT
+  recorded_at: Sat, 29 Oct 2016 18:26:24 GMT
 - request:
     method: get
     uri: https://api.scaleapi.com/v1/task/abcdefghijklmn0123456789
     body:
       encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback
+      string: '{"callback_url":"http://www.example.com/callback"}'
     headers:
       Accept:
       - application/json
@@ -1302,31 +1628,50 @@ http_interactions:
       User-Agent:
       - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
       Content-Length:
-      - '52'
+      - '50'
       Host:
       - api.scaleapi.com
       Authorization:
       - Basic dGVzdF81YzllZDRmMzIwYWVhZjJjZjcwZjUwODZjOTdlN2Y0Mzo=
   response:
     status:
-      code: 503
-      message: Service Unavailable
+      code: 404
+      message: Not Found
     headers:
       Date:
-      - Tue, 20 Sep 2016 20:34:08 GMT
+      - Sat, 29 Oct 2016 18:26:25 GMT
       Content-Type:
-      - text/html; charset=utf-8
-      Transfer-Encoding:
-      - chunked
+      - application/json; charset=utf-8
+      Content-Length:
+      - '44'
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d3765b0ddae98397ffe7095fef00835641474403647; expires=Wed, 20-Sep-17
-        20:34:07 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      Cache-Control:
-      - no-cache, no-store
+      - __cfduid=d925dac7d4a2d45ef3624ba8b739d1f1f1477765584; expires=Sun, 29-Oct-17
+        18:26:24 GMT; path=/; domain=.scaleapi.com; HttpOnly
+      - heroku-session-affinity=ACyDaANoA24IAdtWuK3///8HYgALrpBiAA7TvGEBbAAAAAFtAAAABXdlYi4xanQAMx+yY3qMkzascPzD729hnR7h;
+        Version=1; Expires=Sun, 30-Oct-2016 18:26:24 GMT; Max-Age=86400; Domain=api.scaleapi.com;
+        Path=/; HttpOnly
+      - scaleCookie.sig=xURXFdn3awS9cRKs__bzKqfRvL4; path=/; httponly
+      - scaleCookie=eyJmbGFzaCI6W10sInBhc3Nwb3J0Ijp7fX0=; path=/; httponly
+      X-Powered-By:
+      - Express
+      Access-Control-Allow-Origin:
+      - https://docs.scaleapi.com
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Headers:
+      - Content-Type
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Etag:
+      - W/"2c-nvsgw9SYOVp6Io9QK+tpGw"
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 vegur
       Strict-Transport-Security:
       - max-age=2592000; includeSubDomains; preload
       X-Content-Type-Options:
@@ -1334,34 +1679,18 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Cf-Ray:
-      - 2e580e6f7cc53c23-CDG
+      - 2f98acf9a9f02fa1-MAD
     body:
       encoding: UTF-8
-      string: |-
-        <!DOCTYPE html>
-            <html>
-            <head>
-              <meta name="viewport" content="width=device-width, initial-scale=1">
-              <style type="text/css">
-                html, body, iframe { margin: 0; padding: 0; height: 100%; }
-                iframe { display: block; width: 100%; border: none; }
-              </style>
-            <title>Application Error</title>
-            </head>
-            <body>
-              <iframe src="//s3.amazonaws.com/heroku_pages/error.html">
-                <p>Application Error</p>
-              </iframe>
-            </body>
-            </html>
+      string: '{"status_code":404,"error":"Task not found"}'
     http_version: 
-  recorded_at: Tue, 20 Sep 2016 20:34:05 GMT
+  recorded_at: Sat, 29 Oct 2016 18:26:25 GMT
 - request:
     method: get
-    uri: https://api.scaleapi.com/v1/task/57e19d2d9954d53800c7efbf
+    uri: https://api.scaleapi.com/v1/task/5814e9c7bfd7b30600fe2707
     body:
       encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback
+      string: '{"callback_url":"http://www.example.com/callback"}'
     headers:
       Accept:
       - application/json
@@ -1370,9 +1699,9 @@ http_interactions:
       User-Agent:
       - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
       Content-Length:
-      - '52'
+      - '50'
       Host:
       - api.scaleapi.com
       Authorization:
@@ -1383,7 +1712,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 20 Sep 2016 20:34:14 GMT
+      - Sat, 29 Oct 2016 18:26:25 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -1391,23 +1720,25 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d3d6dc07d9de69d3081d973fd418c7b481474403648; expires=Wed, 20-Sep-17
-        20:34:08 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IAXPwTtX///8HYgAGKMBiAAqBAGEBbAAAAAFtAAAABXdlYi4xaj2Kfu/lyMaQem0ez1YqeFQOijAE;
-        Version=1; Expires=Wed, 21-Sep-2016 20:34:14 GMT; Max-Age=86400; Domain=api.scaleapi.com;
+      - __cfduid=d22c7fbafcace3b52a1b9e2f6d6fba34d1477765585; expires=Sun, 29-Oct-17
+        18:26:25 GMT; path=/; domain=.scaleapi.com; HttpOnly
+      - heroku-session-affinity=ACyDaANoA24IATPbl6////8HYgALrpFiAAUjImEBbAAAAAFtAAAABXdlYi4xamTLvGjJxCivnn4DchFrYwCozTgC;
+        Version=1; Expires=Sun, 30-Oct-2016 18:26:25 GMT; Max-Age=86400; Domain=api.scaleapi.com;
         Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
+      - scaleCookie.sig=xURXFdn3awS9cRKs__bzKqfRvL4; path=/; httponly
+      - scaleCookie=eyJmbGFzaCI6W10sInBhc3Nwb3J0Ijp7fX0=; path=/; httponly
       X-Powered-By:
       - Express
       Access-Control-Allow-Origin:
-      - "*"
+      - https://docs.scaleapi.com
       Access-Control-Allow-Methods:
       - GET,PUT,POST,DELETE
       Access-Control-Allow-Headers:
       - Content-Type
+      Access-Control-Allow-Credentials:
+      - 'true'
       Etag:
-      - W/"23c-HmrGlWuw4egiiCF/KDw2WA"
+      - W/"2a5-DJDJXxceyIbIscqZHYpZGQ"
       Vary:
       - Accept-Encoding
       Via:
@@ -1419,1211 +1750,22 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Cf-Ray:
-      - 2e580e728efc3c6b-CDG
+      - 2f98acfbfe222f4d-MAD
       Content-Encoding:
       - gzip
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAA3yQQYvbMBSE/4qYSy9aR5usk1i3UAr9AYVCSzGK9LIWkSUh
-        PZM1S/57cTbppaXHN8yb+Zh32EKGyfWGobFWz9sn1T2t1be10puNfukatd3/
-        gIQ1IRyNPfdTCdAYmLNerS6XS0NvZsyBGpvG1cMFCZ4zQSMPKdIiQ6Ky4alC
-        w6blg8lBwsfKZbLsU4TGZxOC4MFXkanUFIWJTjCFIEYSi0yj8UEY5wrV2ohD
-        PQt/EgN9qmIwOc+CU2ogMZVXinaGhjMzJLIpZqzQ7x9EfZzGIxVotKptldru
-        ty0kKLLnuY9mXNgPgd5MdEV8N/EVEidPwd0ybhTQ+HKjOXzQ4Cphh+QtVeif
-        +ErC36Eg71dMfFd+LebHDP9Zf7dd1i9Uc4qVlu40sU03vpj67O15yngUQ/9V
-        9C9spsriT+b1KuFrv4jQXCaSYFPPvXfLPDt67tzadV374trNXim7o9PxhOtv
-        AAAA//8DAB+pxlo8AgAA
+        H4sIAAAAAAAAA3xRTWsbMRD9K+pc2oJsr916besSTCnk1kuh0BKWsTT2Cmsl
+        IY1wFuP/XrSJA4HSo57ezPuYK+hEyGQ6ZFCwapbtbNnMVrufy61atWq5njfb
+        7W+QoNG5A+pzV5IDBT1zVIvF5XKZ0zMO0dFch2FxZ4EEHiOBgtgHTxUGCZmR
+        SwYFOtQJJgMSrM+cimYbPCj4hs4J7m0WkVIOXqA3gsk5MZCoMA1onUBjEuU8
+        F/t8FvYoevqYRY8xjoJDmIOEkk7k9QgKDI4gIWLCIYO6vjjqfBkOlEDBulmv
+        m6bdtmuQQJ4tj53HoXrfO3pGb5L4hf5U/etkY+3pkZwL4oPYJxJjKG/KBscH
+        8SliyfRZ/PAkhpCoxvEnMROXHlnYXCfS+xwPIOFoyZnJ4PQFCr5PlP0LBW4S
+        dB+spgzqDzxS3TTpgnx9+cCvyFMl3zv+z2l3bT1tohyDz1S1Q2EdpvB98aeu
+        RLjLTrHfy/zLNFNm8bbxdpNgc1dBUJwKSWDM586a2vx2+ZV2enM4ms3hS9M2
+        zZFWm2YDEgZiNMgI6nq7/QUAAP//AwAJjLEUpQIAAA==
     http_version: 
-  recorded_at: Tue, 20 Sep 2016 20:34:11 GMT
-- request:
-    method: post
-    uri: https://api.scaleapi.com/v1/task/phonecall
-    body:
-      encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback&instruction=Call+this+person+and+tell+me+his+email+address.+Ask+if+he%27s+happy+too.&phone_number=5055006865&entity_name=Alexandr+Wang&fields[email]=Email+Address&choices[]=He+is+happy&choices[]=He+is+not+happy
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Content-Length:
-      - '263'
-      Host:
-      - api.scaleapi.com
-      Authorization:
-      - Basic dGVzdF9hYmNkZWZnaGlqa2xtb3BxcnN0dXZ3eHl6Og==
-  response:
-    status:
-      code: 401
-      message: Unauthorized
-    headers:
-      Date:
-      - Tue, 20 Sep 2016 22:19:36 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '84'
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - __cfduid=d60e37e71940a8fddc919e309d1e6de311474409976; expires=Wed, 20-Sep-17
-        22:19:36 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IAZuOKdT///8HYgAGQXhiAAsEMWEBbAAAAAFtAAAABXdlYi4xapnQlFYZ3vmtF0UjADXOkmT56vBF;
-        Version=1; Expires=Wed, 21-Sep-2016 22:19:36 GMT; Max-Age=86400; Domain=api.scaleapi.com;
-        Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
-      X-Powered-By:
-      - Express
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET,PUT,POST,DELETE
-      Access-Control-Allow-Headers:
-      - Content-Type
-      Etag:
-      - W/"54-hB1kwjCx4qwGwMoLdUIV9w"
-      Vary:
-      - Accept-Encoding
-      Via:
-      - 1.1 vegur
-      Strict-Transport-Security:
-      - max-age=2592000; includeSubDomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - cloudflare-nginx
-      Cf-Ray:
-      - 2e58a8efcded54a4-MAD
-    body:
-      encoding: UTF-8
-      string: '{"status_code":401,"error":"Your API key does not correspond to a registered
-        user."}'
-    http_version: 
-  recorded_at: Tue, 20 Sep 2016 22:19:33 GMT
-- request:
-    method: post
-    uri: https://api.scaleapi.com/v1/task/annotation
-    body:
-      encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback&instruction=Draw+a+box+around+each+baby+cow+and+big+cow.&attachment_type=image&attachment=http%3A%2F%2Fi.imgur.com%2Fv4cBreD.jpg&objects_to_annotate[]=baby+cow&objects_to_annotate[]=big+cow&with_labels=true
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Content-Length:
-      - '259'
-      Host:
-      - api.scaleapi.com
-      Authorization:
-      - Basic dGVzdF9hYmNkZWZnaGlqa2xtb3BxcnN0dXZ3eHl6Og==
-  response:
-    status:
-      code: 401
-      message: Unauthorized
-    headers:
-      Date:
-      - Tue, 20 Sep 2016 22:19:37 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '84'
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - __cfduid=d22650cf3c64ccf8948943ec40fdef24c1474409977; expires=Wed, 20-Sep-17
-        22:19:37 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IAVETRtX///8HYgAGQXliAAq/nGEBbAAAAAFtAAAABXdlYi4xasLfPX9/90QL2t0Rx4ZrYrh8/jbd;
-        Version=1; Expires=Wed, 21-Sep-2016 22:19:37 GMT; Max-Age=86400; Domain=api.scaleapi.com;
-        Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
-      X-Powered-By:
-      - Express
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET,PUT,POST,DELETE
-      Access-Control-Allow-Headers:
-      - Content-Type
-      Etag:
-      - W/"54-hB1kwjCx4qwGwMoLdUIV9w"
-      Vary:
-      - Accept-Encoding
-      Via:
-      - 1.1 vegur
-      Strict-Transport-Security:
-      - max-age=2592000; includeSubDomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - cloudflare-nginx
-      Cf-Ray:
-      - 2e58a8f54abe3c29-CDG
-    body:
-      encoding: UTF-8
-      string: '{"status_code":401,"error":"Your API key does not correspond to a registered
-        user."}'
-    http_version: 
-  recorded_at: Tue, 20 Sep 2016 22:19:34 GMT
-- request:
-    method: post
-    uri: https://api.scaleapi.com/v1/task/annotation
-    body:
-      encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Content-Length:
-      - '52'
-      Host:
-      - api.scaleapi.com
-      Authorization:
-      - Basic dGVzdF9hYmNkZWZnaGlqa2xtb3BxcnN0dXZ3eHl6Og==
-  response:
-    status:
-      code: 401
-      message: Unauthorized
-    headers:
-      Date:
-      - Tue, 20 Sep 2016 22:19:38 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '84'
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - __cfduid=d7b8a950b4849dccf84f4a39cf8adfbbe1474409978; expires=Wed, 20-Sep-17
-        22:19:38 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IAZlsvdP///8HYgAGQXpiAAgrkGEBbAAAAAFtAAAABXdlYi4xaimouOhUrmdCZyIEsBqRwz+ElUky;
-        Version=1; Expires=Wed, 21-Sep-2016 22:19:38 GMT; Max-Age=86400; Domain=api.scaleapi.com;
-        Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
-      X-Powered-By:
-      - Express
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET,PUT,POST,DELETE
-      Access-Control-Allow-Headers:
-      - Content-Type
-      Etag:
-      - W/"54-hB1kwjCx4qwGwMoLdUIV9w"
-      Vary:
-      - Accept-Encoding
-      Via:
-      - 1.1 vegur
-      Strict-Transport-Security:
-      - max-age=2592000; includeSubDomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - cloudflare-nginx
-      Cf-Ray:
-      - 2e58a8fbbb74151b-CDG
-    body:
-      encoding: UTF-8
-      string: '{"status_code":401,"error":"Your API key does not correspond to a registered
-        user."}'
-    http_version: 
-  recorded_at: Tue, 20 Sep 2016 22:19:35 GMT
-- request:
-    method: post
-    uri: https://api.scaleapi.com/v1/task/annotation
-    body:
-      encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Content-Length:
-      - '52'
-      Host:
-      - api.scaleapi.com
-      Authorization:
-      - Basic dGVzdF9hYmNkZWZnaGlqa2xtb3BxcnN0dXZ3eHl6Og==
-  response:
-    status:
-      code: 401
-      message: Unauthorized
-    headers:
-      Date:
-      - Tue, 20 Sep 2016 22:19:39 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '84'
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - __cfduid=dfd69c2666d1ed50b941bf97b467d71d61474409978; expires=Wed, 20-Sep-17
-        22:19:38 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IAbh1b9X///8HYgAGQXtiAASi4GEBbAAAAAFtAAAABXdlYi4xar7Iu9fAnZMstRt+dKT1bMWJeqws;
-        Version=1; Expires=Wed, 21-Sep-2016 22:19:39 GMT; Max-Age=86400; Domain=api.scaleapi.com;
-        Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
-      X-Powered-By:
-      - Express
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET,PUT,POST,DELETE
-      Access-Control-Allow-Headers:
-      - Content-Type
-      Etag:
-      - W/"54-hB1kwjCx4qwGwMoLdUIV9w"
-      Vary:
-      - Accept-Encoding
-      Via:
-      - 1.1 vegur
-      Strict-Transport-Security:
-      - max-age=2592000; includeSubDomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - cloudflare-nginx
-      Cf-Ray:
-      - 2e58a8ffe8682f89-MAD
-    body:
-      encoding: UTF-8
-      string: '{"status_code":401,"error":"Your API key does not correspond to a registered
-        user."}'
-    http_version: 
-  recorded_at: Tue, 20 Sep 2016 22:19:36 GMT
-- request:
-    method: post
-    uri: https://api.scaleapi.com/v1/task/comparison
-    body:
-      encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback&instruction=Do+the+objects+in+these+images+have+the+same+pattern%3F&attachment_type=image&choices[]=yes&choices[]=no&attachments[]=http%3A%2F%2Fi.ebayimg.com%2F00%2F%24T2eC16dHJGwFFZKjy5ZjBRfNyMC4Ig%7E%7E_32.JPG&attachments[]=http%3A%2F%2Fimages.wisegeek.com%2Fcheckered-tablecloth.jpg
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Content-Length:
-      - '338'
-      Host:
-      - api.scaleapi.com
-      Authorization:
-      - Basic dGVzdF9hYmNkZWZnaGlqa2xtb3BxcnN0dXZ3eHl6Og==
-  response:
-    status:
-      code: 401
-      message: Unauthorized
-    headers:
-      Date:
-      - Tue, 20 Sep 2016 22:19:40 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '84'
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - __cfduid=d5a37a132a5fb11b93cd9f6f6bc9f8c771474409979; expires=Wed, 20-Sep-17
-        22:19:39 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IAdYaVdX///8HYgAGQXxiAAIfMWEBbAAAAAFtAAAABXdlYi4xagy9jfF1958CZb+j6GLgHF+zo33e;
-        Version=1; Expires=Wed, 21-Sep-2016 22:19:40 GMT; Max-Age=86400; Domain=api.scaleapi.com;
-        Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
-      X-Powered-By:
-      - Express
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET,PUT,POST,DELETE
-      Access-Control-Allow-Headers:
-      - Content-Type
-      Etag:
-      - W/"54-hB1kwjCx4qwGwMoLdUIV9w"
-      Vary:
-      - Accept-Encoding
-      Via:
-      - 1.1 vegur
-      Strict-Transport-Security:
-      - max-age=2592000; includeSubDomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - cloudflare-nginx
-      Cf-Ray:
-      - 2e58a9057c7514f7-CDG
-    body:
-      encoding: UTF-8
-      string: '{"status_code":401,"error":"Your API key does not correspond to a registered
-        user."}'
-    http_version: 
-  recorded_at: Tue, 20 Sep 2016 22:19:37 GMT
-- request:
-    method: post
-    uri: https://api.scaleapi.com/v1/task/comparison
-    body:
-      encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback&instruction=Test+instruction&choices[]=a&choices[]=b
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Content-Length:
-      - '105'
-      Host:
-      - api.scaleapi.com
-      Authorization:
-      - Basic dGVzdF9hYmNkZWZnaGlqa2xtb3BxcnN0dXZ3eHl6Og==
-  response:
-    status:
-      code: 401
-      message: Unauthorized
-    headers:
-      Date:
-      - Tue, 20 Sep 2016 22:19:40 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '84'
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - __cfduid=df91352c49eab200d10d101d8efca56641474409980; expires=Wed, 20-Sep-17
-        22:19:40 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IAZZuXtb///8HYgAGQXxiAA0cNWEBbAAAAAFtAAAABXdlYi4xap7JBT9HkFjjQ/lx8eZqinhCBxp4;
-        Version=1; Expires=Wed, 21-Sep-2016 22:19:40 GMT; Max-Age=86400; Domain=api.scaleapi.com;
-        Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
-      X-Powered-By:
-      - Express
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET,PUT,POST,DELETE
-      Access-Control-Allow-Headers:
-      - Content-Type
-      Etag:
-      - W/"54-hB1kwjCx4qwGwMoLdUIV9w"
-      Vary:
-      - Accept-Encoding
-      Via:
-      - 1.1 vegur
-      Strict-Transport-Security:
-      - max-age=2592000; includeSubDomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - cloudflare-nginx
-      Cf-Ray:
-      - 2e58a909eee0549e-MAD
-    body:
-      encoding: UTF-8
-      string: '{"status_code":401,"error":"Your API key does not correspond to a registered
-        user."}'
-    http_version: 
-  recorded_at: Tue, 20 Sep 2016 22:19:37 GMT
-- request:
-    method: post
-    uri: https://api.scaleapi.com/v1/task/comparison
-    body:
-      encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback&instruction=Test+instruction&choices[]=a&choices[]=b
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Content-Length:
-      - '105'
-      Host:
-      - api.scaleapi.com
-      Authorization:
-      - Basic dGVzdF9hYmNkZWZnaGlqa2xtb3BxcnN0dXZ3eHl6Og==
-  response:
-    status:
-      code: 401
-      message: Unauthorized
-    headers:
-      Date:
-      - Tue, 20 Sep 2016 22:19:41 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '84'
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - __cfduid=d01a18977f1d87be316f67188a9a8430e1474409981; expires=Wed, 20-Sep-17
-        22:19:41 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IATnnTtX///8HYgAGQX1iAAjzJmEBbAAAAAFtAAAABXdlYi4xahENuvXp/YuDCjMd2P8XuvQ/k6e5;
-        Version=1; Expires=Wed, 21-Sep-2016 22:19:41 GMT; Max-Age=86400; Domain=api.scaleapi.com;
-        Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
-      X-Powered-By:
-      - Express
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET,PUT,POST,DELETE
-      Access-Control-Allow-Headers:
-      - Content-Type
-      Etag:
-      - W/"54-hB1kwjCx4qwGwMoLdUIV9w"
-      Vary:
-      - Accept-Encoding
-      Via:
-      - 1.1 vegur
-      Strict-Transport-Security:
-      - max-age=2592000; includeSubDomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - cloudflare-nginx
-      Cf-Ray:
-      - 2e58a90e9e2b103d-CDG
-    body:
-      encoding: UTF-8
-      string: '{"status_code":401,"error":"Your API key does not correspond to a registered
-        user."}'
-    http_version: 
-  recorded_at: Tue, 20 Sep 2016 22:19:38 GMT
-- request:
-    method: post
-    uri: https://api.scaleapi.com/v1/task/categorize
-    body:
-      encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback&instruction=Is+this+company+public+or+private%3F&attachment_type=website&attachment=http%3A%2F%2Fwww.google.com%2F&categories[]=public&categories[]=private&allow_multiple=false
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Content-Length:
-      - '229'
-      Host:
-      - api.scaleapi.com
-      Authorization:
-      - Basic dGVzdF9hYmNkZWZnaGlqa2xtb3BxcnN0dXZ3eHl6Og==
-  response:
-    status:
-      code: 401
-      message: Unauthorized
-    headers:
-      Date:
-      - Tue, 20 Sep 2016 22:19:42 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '84'
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - __cfduid=d1ceb56cecd8d4e3adb9c7a1cc46c50c71474409982; expires=Wed, 20-Sep-17
-        22:19:42 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IATQq2NT///8HYgAGQX5iAAXrMmEBbAAAAAFtAAAABXdlYi4xarQ9aofcFFAdy85obm28ADzLNpa0;
-        Version=1; Expires=Wed, 21-Sep-2016 22:19:42 GMT; Max-Age=86400; Domain=api.scaleapi.com;
-        Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
-      X-Powered-By:
-      - Express
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET,PUT,POST,DELETE
-      Access-Control-Allow-Headers:
-      - Content-Type
-      Etag:
-      - W/"54-hB1kwjCx4qwGwMoLdUIV9w"
-      Vary:
-      - Accept-Encoding
-      Via:
-      - 1.1 vegur
-      Strict-Transport-Security:
-      - max-age=2592000; includeSubDomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - cloudflare-nginx
-      Cf-Ray:
-      - 2e58a913ae323c65-CDG
-    body:
-      encoding: UTF-8
-      string: '{"status_code":401,"error":"Your API key does not correspond to a registered
-        user."}'
-    http_version: 
-  recorded_at: Tue, 20 Sep 2016 22:19:39 GMT
-- request:
-    method: post
-    uri: https://api.scaleapi.com/v1/task/categorize
-    body:
-      encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback&instruction=Test+instruction
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Content-Length:
-      - '81'
-      Host:
-      - api.scaleapi.com
-      Authorization:
-      - Basic dGVzdF9hYmNkZWZnaGlqa2xtb3BxcnN0dXZ3eHl6Og==
-  response:
-    status:
-      code: 401
-      message: Unauthorized
-    headers:
-      Date:
-      - Tue, 20 Sep 2016 22:19:43 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '84'
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - __cfduid=d1ceb56cecd8d4e3adb9c7a1cc46c50c71474409982; expires=Wed, 20-Sep-17
-        22:19:42 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IAZDxo9T///8HYgAGQX9iAAFL4mEBbAAAAAFtAAAABXdlYi4xap7l8aivGThjDk8AfEZxRe246/yo;
-        Version=1; Expires=Wed, 21-Sep-2016 22:19:43 GMT; Max-Age=86400; Domain=api.scaleapi.com;
-        Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
-      X-Powered-By:
-      - Express
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET,PUT,POST,DELETE
-      Access-Control-Allow-Headers:
-      - Content-Type
-      Etag:
-      - W/"54-hB1kwjCx4qwGwMoLdUIV9w"
-      Vary:
-      - Accept-Encoding
-      Via:
-      - 1.1 vegur
-      Strict-Transport-Security:
-      - max-age=2592000; includeSubDomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - cloudflare-nginx
-      Cf-Ray:
-      - 2e58a918783c3c65-CDG
-    body:
-      encoding: UTF-8
-      string: '{"status_code":401,"error":"Your API key does not correspond to a registered
-        user."}'
-    http_version: 
-  recorded_at: Tue, 20 Sep 2016 22:19:40 GMT
-- request:
-    method: post
-    uri: https://api.scaleapi.com/v1/task/categorize
-    body:
-      encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback&instruction=Test+instruction
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Content-Length:
-      - '81'
-      Host:
-      - api.scaleapi.com
-      Authorization:
-      - Basic dGVzdF9hYmNkZWZnaGlqa2xtb3BxcnN0dXZ3eHl6Og==
-  response:
-    status:
-      code: 401
-      message: Unauthorized
-    headers:
-      Date:
-      - Tue, 20 Sep 2016 22:19:43 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '84'
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - __cfduid=d087766238736b610055ef79edbbc6acd1474409983; expires=Wed, 20-Sep-17
-        22:19:43 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IAfq0PNX///8HYgAGQX9iAAxOcmEBbAAAAAFtAAAABXdlYi4xahP2pf2W+eCB+B3LiHoovw/Ja2gz;
-        Version=1; Expires=Wed, 21-Sep-2016 22:19:43 GMT; Max-Age=86400; Domain=api.scaleapi.com;
-        Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
-      X-Powered-By:
-      - Express
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET,PUT,POST,DELETE
-      Access-Control-Allow-Headers:
-      - Content-Type
-      Etag:
-      - W/"54-hB1kwjCx4qwGwMoLdUIV9w"
-      Vary:
-      - Accept-Encoding
-      Via:
-      - 1.1 vegur
-      Strict-Transport-Security:
-      - max-age=2592000; includeSubDomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - cloudflare-nginx
-      Cf-Ray:
-      - 2e58a91c8f882f35-MAD
-    body:
-      encoding: UTF-8
-      string: '{"status_code":401,"error":"Your API key does not correspond to a registered
-        user."}'
-    http_version: 
-  recorded_at: Tue, 20 Sep 2016 22:19:40 GMT
-- request:
-    method: post
-    uri: https://api.scaleapi.com/v1/task/phonecall
-    body:
-      encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback&instruction=Test+instruction&phone_number=5055006865
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Content-Length:
-      - '105'
-      Host:
-      - api.scaleapi.com
-      Authorization:
-      - Basic dGVzdF9hYmNkZWZnaGlqa2xtb3BxcnN0dXZ3eHl6Og==
-  response:
-    status:
-      code: 401
-      message: Unauthorized
-    headers:
-      Date:
-      - Tue, 20 Sep 2016 22:19:44 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '84'
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - __cfduid=d0e568fc8ff5f59d9dba0e3d9ed44f7681474409984; expires=Wed, 20-Sep-17
-        22:19:44 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IAf1yPNL///8HYgAGQYBiAAi1eGEBbAAAAAFtAAAABXdlYi4xaqEwXltri/bDN5cqtbQ2M8oD9qrD;
-        Version=1; Expires=Wed, 21-Sep-2016 22:19:44 GMT; Max-Age=86400; Domain=api.scaleapi.com;
-        Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
-      X-Powered-By:
-      - Express
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET,PUT,POST,DELETE
-      Access-Control-Allow-Headers:
-      - Content-Type
-      Etag:
-      - W/"54-hB1kwjCx4qwGwMoLdUIV9w"
-      Vary:
-      - Accept-Encoding
-      Via:
-      - 1.1 vegur
-      Strict-Transport-Security:
-      - max-age=2592000; includeSubDomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - cloudflare-nginx
-      Cf-Ray:
-      - 2e58a9217cea048b-CDG
-    body:
-      encoding: UTF-8
-      string: '{"status_code":401,"error":"Your API key does not correspond to a registered
-        user."}'
-    http_version: 
-  recorded_at: Tue, 20 Sep 2016 22:19:41 GMT
-- request:
-    method: post
-    uri: https://api.scaleapi.com/v1/task/phonecall
-    body:
-      encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback&instruction=Test+instruction&phone_number=5055006865
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Content-Length:
-      - '105'
-      Host:
-      - api.scaleapi.com
-      Authorization:
-      - Basic dGVzdF9hYmNkZWZnaGlqa2xtb3BxcnN0dXZ3eHl6Og==
-  response:
-    status:
-      code: 401
-      message: Unauthorized
-    headers:
-      Date:
-      - Tue, 20 Sep 2016 22:19:45 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '84'
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - __cfduid=d97b7b062765cc68383dbe67f786de8001474409984; expires=Wed, 20-Sep-17
-        22:19:44 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IAVaSfNX///8HYgAGQYFiAALtBWEBbAAAAAFtAAAABXdlYi4xaiuIgcTVbHN3Xfo8luDM/8GnV3Zu;
-        Version=1; Expires=Wed, 21-Sep-2016 22:19:45 GMT; Max-Age=86400; Domain=api.scaleapi.com;
-        Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
-      X-Powered-By:
-      - Express
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET,PUT,POST,DELETE
-      Access-Control-Allow-Headers:
-      - Content-Type
-      Etag:
-      - W/"54-hB1kwjCx4qwGwMoLdUIV9w"
-      Vary:
-      - Accept-Encoding
-      Via:
-      - 1.1 vegur
-      Strict-Transport-Security:
-      - max-age=2592000; includeSubDomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - cloudflare-nginx
-      Cf-Ray:
-      - 2e58a9259d3b3c65-CDG
-    body:
-      encoding: UTF-8
-      string: '{"status_code":401,"error":"Your API key does not correspond to a registered
-        user."}'
-    http_version: 
-  recorded_at: Tue, 20 Sep 2016 22:19:42 GMT
-- request:
-    method: post
-    uri: https://api.scaleapi.com/v1/task/transcription
-    body:
-      encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback&instruction=Transcribe+the+given+fields.+Then+for+each+news+item+on+the+page%2C+transcribe+the+information+for+the+row.&attachment_type=website&attachment=http%3A%2F%2Fwww.google.com%2F&fields[title]=Title+of+Webpage&fields[top_result]=Title+of+the+top+result&row_fields[username]=Username+of+submitter&row_fields[comment_count]=Number+of+comments
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Content-Length:
-      - '400'
-      Host:
-      - api.scaleapi.com
-      Authorization:
-      - Basic dGVzdF9hYmNkZWZnaGlqa2xtb3BxcnN0dXZ3eHl6Og==
-  response:
-    status:
-      code: 401
-      message: Unauthorized
-    headers:
-      Date:
-      - Wed, 21 Sep 2016 18:22:56 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '84'
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - __cfduid=d82f8c0f7f61675ccd23db453c21aafd11474482176; expires=Thu, 21-Sep-17
-        18:22:56 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IAflpQ87///8HYgAHW4BiAAhy3GEBbAAAAAFtAAAABXdlYi4xan59lYCOfmLsdwCchdfTkbRP64GB;
-        Version=1; Expires=Thu, 22-Sep-2016 18:22:56 GMT; Max-Age=86400; Domain=api.scaleapi.com;
-        Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
-      X-Powered-By:
-      - Express
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET,PUT,POST,DELETE
-      Access-Control-Allow-Headers:
-      - Content-Type
-      Etag:
-      - W/"54-hB1kwjCx4qwGwMoLdUIV9w"
-      Vary:
-      - Accept-Encoding
-      Via:
-      - 1.1 vegur
-      Strict-Transport-Security:
-      - max-age=2592000; includeSubDomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - cloudflare-nginx
-      Cf-Ray:
-      - 2e5f8ba13f110920-CDG
-    body:
-      encoding: UTF-8
-      string: '{"status_code":401,"error":"Your API key does not correspond to a registered
-        user."}'
-    http_version: 
-  recorded_at: Wed, 21 Sep 2016 18:22:55 GMT
-- request:
-    method: post
-    uri: https://api.scaleapi.com/v1/task/transcription
-    body:
-      encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback&instruction=Test+instruction&attachment_type=website
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Content-Length:
-      - '105'
-      Host:
-      - api.scaleapi.com
-      Authorization:
-      - Basic dGVzdF9hYmNkZWZnaGlqa2xtb3BxcnN0dXZ3eHl6Og==
-  response:
-    status:
-      code: 401
-      message: Unauthorized
-    headers:
-      Date:
-      - Wed, 21 Sep 2016 18:22:57 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '84'
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - __cfduid=d673db8d36df62d207ca7ae8dc587bff51474482176; expires=Thu, 21-Sep-17
-        18:22:56 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IAdf5P+j///8HYgAHW4FiAATPy2EBbAAAAAFtAAAABXdlYi4xap3s+Y72feR4kRQKUPoexJS5f55J;
-        Version=1; Expires=Thu, 22-Sep-2016 18:22:57 GMT; Max-Age=86400; Domain=api.scaleapi.com;
-        Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
-      X-Powered-By:
-      - Express
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET,PUT,POST,DELETE
-      Access-Control-Allow-Headers:
-      - Content-Type
-      Etag:
-      - W/"54-hB1kwjCx4qwGwMoLdUIV9w"
-      Vary:
-      - Accept-Encoding
-      Via:
-      - 1.1 vegur
-      Strict-Transport-Security:
-      - max-age=2592000; includeSubDomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - cloudflare-nginx
-      Cf-Ray:
-      - 2e5f8ba63b451061-CDG
-    body:
-      encoding: UTF-8
-      string: '{"status_code":401,"error":"Your API key does not correspond to a registered
-        user."}'
-    http_version: 
-  recorded_at: Wed, 21 Sep 2016 18:22:56 GMT
-- request:
-    method: post
-    uri: https://api.scaleapi.com/v1/task/transcription
-    body:
-      encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback&instruction=Test+instruction&attachment_type=website
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Content-Length:
-      - '105'
-      Host:
-      - api.scaleapi.com
-      Authorization:
-      - Basic dGVzdF9hYmNkZWZnaGlqa2xtb3BxcnN0dXZ3eHl6Og==
-  response:
-    status:
-      code: 401
-      message: Unauthorized
-    headers:
-      Date:
-      - Wed, 21 Sep 2016 18:22:58 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '84'
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - __cfduid=d465e0e9f0493f19c0adf8899acf3e5231474482177; expires=Thu, 21-Sep-17
-        18:22:57 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IAfF7ks3///8HYgAHW4JiAAF6omEBbAAAAAFtAAAABXdlYi4xarfOGGECaJdxKWWQl1jRyWpjg12l;
-        Version=1; Expires=Thu, 22-Sep-2016 18:22:58 GMT; Max-Age=86400; Domain=api.scaleapi.com;
-        Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
-      X-Powered-By:
-      - Express
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET,PUT,POST,DELETE
-      Access-Control-Allow-Headers:
-      - Content-Type
-      Etag:
-      - W/"54-hB1kwjCx4qwGwMoLdUIV9w"
-      Vary:
-      - Accept-Encoding
-      Via:
-      - 1.1 vegur
-      Strict-Transport-Security:
-      - max-age=2592000; includeSubDomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - cloudflare-nginx
-      Cf-Ray:
-      - 2e5f8baa19ab2f4d-MAD
-    body:
-      encoding: UTF-8
-      string: '{"status_code":401,"error":"Your API key does not correspond to a registered
-        user."}'
-    http_version: 
-  recorded_at: Wed, 21 Sep 2016 18:22:56 GMT
-- request:
-    method: get
-    uri: https://api.scaleapi.com/v1/tasks
-    body:
-      encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Content-Length:
-      - '52'
-      Host:
-      - api.scaleapi.com
-      Authorization:
-      - Basic dGVzdF9hYmNkZWZnaGlqa2xtb3BxcnN0dXZ3eHl6Og==
-  response:
-    status:
-      code: 401
-      message: Unauthorized
-    headers:
-      Date:
-      - Wed, 21 Sep 2016 18:22:58 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '84'
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - __cfduid=d510f820a50795ebc78c405380bfe3eb71474482178; expires=Thu, 21-Sep-17
-        18:22:58 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IAX3t08v///8HYgAHW4JiAA04d2EBbAAAAAFtAAAABXdlYi4xauP6UbV0K25gzQuFu9hHI5UoTakw;
-        Version=1; Expires=Thu, 22-Sep-2016 18:22:58 GMT; Max-Age=86400; Domain=api.scaleapi.com;
-        Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
-      X-Powered-By:
-      - Express
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET,PUT,POST,DELETE
-      Access-Control-Allow-Headers:
-      - Content-Type
-      Etag:
-      - W/"54-hB1kwjCx4qwGwMoLdUIV9w"
-      Vary:
-      - Accept-Encoding
-      Via:
-      - 1.1 vegur
-      Strict-Transport-Security:
-      - max-age=2592000; includeSubDomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - cloudflare-nginx
-      Cf-Ray:
-      - 2e5f8bafdf8a1061-CDG
-    body:
-      encoding: UTF-8
-      string: '{"status_code":401,"error":"Your API key does not correspond to a registered
-        user."}'
-    http_version: 
-  recorded_at: Wed, 21 Sep 2016 18:22:57 GMT
-- request:
-    method: get
-    uri: https://api.scaleapi.com/v1/task/abcdefghijklmn0123456789
-    body:
-      encoding: UTF-8
-      string: callback_url=http%3A%2F%2Fwww.example.com%2Fcallback
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - rest-client/2.0.0 (linux-gnu x86_64) ruby/2.2.4p230
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Content-Length:
-      - '52'
-      Host:
-      - api.scaleapi.com
-      Authorization:
-      - Basic dGVzdF9hYmNkZWZnaGlqa2xtb3BxcnN0dXZ3eHl6Og==
-  response:
-    status:
-      code: 401
-      message: Unauthorized
-    headers:
-      Date:
-      - Wed, 21 Sep 2016 18:22:59 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '84'
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - __cfduid=d1327255b225cd50b7d3addf95ebd31bb1474482179; expires=Thu, 21-Sep-17
-        18:22:59 GMT; path=/; domain=.scaleapi.com; HttpOnly
-      - heroku-session-affinity=ACyDaANoA24IAbOeG8////8HYgAHW4NiAAndLWEBbAAAAAFtAAAABXdlYi4xaoi5/wjvIAVR2yoTVV0aNsTfRGP1;
-        Version=1; Expires=Thu, 22-Sep-2016 18:22:59 GMT; Max-Age=86400; Domain=api.scaleapi.com;
-        Path=/; HttpOnly
-      - scaleCookie.sig=5D00ZgYg6ozkIeLTj3Q9pZLMPxk; path=/; httponly
-      - scaleCookie=eyJwYXNzcG9ydCI6e319; path=/; httponly
-      X-Powered-By:
-      - Express
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET,PUT,POST,DELETE
-      Access-Control-Allow-Headers:
-      - Content-Type
-      Etag:
-      - W/"54-hB1kwjCx4qwGwMoLdUIV9w"
-      Vary:
-      - Accept-Encoding
-      Via:
-      - 1.1 vegur
-      Strict-Transport-Security:
-      - max-age=2592000; includeSubDomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - cloudflare-nginx
-      Cf-Ray:
-      - 2e5f8bb4a8d53c47-CDG
-    body:
-      encoding: UTF-8
-      string: '{"status_code":401,"error":"Your API key does not correspond to a registered
-        user."}'
-    http_version: 
-  recorded_at: Wed, 21 Sep 2016 18:22:58 GMT
+  recorded_at: Sat, 29 Oct 2016 18:26:25 GMT
 recorded_with: VCR 3.0.3

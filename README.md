@@ -136,6 +136,22 @@ scale.create_annotation_task(
 )
 ```
 
+#### Create data collection task
+
+Check [this](https://docs.scaleapi.com/?shell#create-data-collection-task) for further information.
+
+```ruby
+scale.create_data_collection_task(
+  callback_url: 'http://www.example.com/callback',
+  instruction: 'Find the URL for the hiring page for the company with attached website.',
+  attachment_type: 'website',
+  attachment: 'https://www.scaleapi.com/',
+  fields: {
+    hiring_page: 'Hiring Page URL'
+  }
+)
+```
+
 #### Retrieve task
 
 Check [this](https://docs.scaleapi.com/#retrieve-a-task) for further information.
