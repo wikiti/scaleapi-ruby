@@ -259,6 +259,27 @@ scale.create_comparison_task(
 )
 ```
 
+## Development
+
+Clone this repository with:
+
+```sh
+$ git clone https://github.com/wikiti/scaleapi-ruby
+$ cd scaleapi-ruby
+```
+
+Install the current development version as a gem with:
+
+```sh
+$ rake install
+```
+
+Run tests with:
+
+```sh
+$ SCALE_API_KEY="your_scale_api_key" rake test
+```
+
 ## Authors
 
 This project has been developed by:

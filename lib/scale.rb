@@ -35,7 +35,11 @@ module Scale
   end
 
   def self.hash(data = nil)
-    ActiveSupport::HashWithIndifferentAccess.new data
+    data ||= {}
+
+    return ActiveSupport::HashWithIndifferentAccess.new(data) if data.instance_of? Hash
+    return data.to_unsafe_hash if data.respond_to? :to_unsafe_hash
+    data
   end
 
   def self.descendants(klass)
