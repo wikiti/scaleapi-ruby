@@ -1,5 +1,7 @@
 [![Gem Version](https://badge.fury.io/rb/scaleapi-ruby.svg)](https://badge.fury.io/rb/scaleapi-ruby) [![Dependency Status](https://gemnasium.com/badges/github.com/wikiti/scaleapi-ruby.svg)](https://gemnasium.com/github.com/wikiti/scaleapi-ruby) [![CircleCI](https://circleci.com/gh/wikiti/scaleapi-ruby.svg?style=shield)](https://circleci.com/gh/wikiti/scaleapi-ruby)
 
+**THIS PROJECT IS NO LONGER MAINTAINED. USE THE [OFFICIAL GEM](https://github.com/scaleapi/scaleapi-ruby) INSTEAD**
+
 # ScaleAPI for Ruby
 
 A simple ruby wrapper for the [Scale](http://www.scaleapi.com) HTTP API. Documentation for this API is available [here](https://docs.scaleapi.com/).
